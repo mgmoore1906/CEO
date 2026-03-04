@@ -1,0 +1,72 @@
+/* CEO Navy Palette Overrides
+   Keeps Hyperspace layout, swaps purple theme to CEO navy.
+*/
+
+:root {
+  --ceo-navy: #1B304F;
+  --ceo-navy-dark: #14253D;
+  --ceo-navy-light: #28466F;
+}
+
+body {
+  background: var(--ceo-navy-dark);
+}
+
+a {
+  color: #ffffff;
+}
+
+a:hover {
+  color: rgba(255,255,255,0.85);
+}
+
+/* Sidebar */
+#sidebar {
+  background: var(--ceo-navy);
+}
+#sidebar a {
+  color: rgba(255,255,255,0.92);
+}
+#sidebar a:hover {
+  color: #ffffff;
+}
+
+/* Section backgrounds (Hyperspace uses style1/style2/style3 etc.) */
+.wrapper.style1 {
+  background: var(--ceo-navy);
+}
+.wrapper.style2 {
+  background: var(--ceo-navy-dark);
+}
+.wrapper.style3 {
+  background: var(--ceo-navy);
+}
+.wrapper.alt {
+  background: var(--ceo-navy-dark);
+}
+
+/* Buttons */
+input[type="submit"].primary,
+input[type="reset"].primary,
+input[type="button"].primary,
+button.primary,
+.button.primary {
+  background-color: var(--ceo-navy-light) !important;
+}
+input[type="submit"].primary:hover,
+input[type="reset"].primary:hover,
+input[type="button"].primary:hover,
+button.primary:hover,
+.button.primary:hover {
+  filter: brightness(1.08);
+}
+
+/* Accent lines */
+hr {
+  border-bottom-color: rgba(255,255,255,0.18);
+}
+
+/* Reduce any purple glow/shadows */
+#sidebar + #wrapper {
+  box-shadow: none;
+}
