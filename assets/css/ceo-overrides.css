@@ -215,3 +215,99 @@ h3.major:after {
 .wrapper.alt li {
   color: #1b1f2a;
 }
+/* ===== Top Header Bar (About / FAQ / interior pages) ===== */
+#header,
+#header.alt {
+  background: var(--ceo-navy) !important;
+}
+
+/* Keep header text/nav readable */
+#header a,
+#header nav a,
+#header .logo {
+  color: #fff !important;
+}
+
+/* Remove any purple border/gradient separators if present */
+#header:after,
+#header nav a:before,
+#header nav a:after {
+  background: rgba(201,162,39,0.55) !important; /* subtle gold accent */
+  background-image: none !important;
+}
+.button,
+input[type="submit"],
+input[type="reset"],
+input[type="button"],
+button {
+  background: var(--ceo-gold) !important;
+  border-color: var(--ceo-gold) !important;
+  color: #111 !important;
+}:root {
+
+  --ceo-navy: #0B1F3B;
+  --ceo-navy-2: #08162A;
+
+  --ceo-accent: #5C677D;
+  --ceo-accent-dark: #4A5568;
+
+  --ceo-light: #F4F6FB;
+
+}/* ===== Button System ===== */
+
+.button.primary,
+input[type="submit"].primary,
+input[type="reset"].primary,
+input[type="button"].primary,
+button.primary {
+
+  background: var(--ceo-accent) !important;
+  border-color: var(--ceo-accent) !important;
+  color: white !important;
+
+}
+
+.button.primary:hover,
+input[type="submit"].primary:hover,
+input[type="reset"].primary:hover,
+input[type="button"].primary:hover,
+button.primary:hover {
+
+  background: var(--ceo-accent-dark) !important;
+  border-color: var(--ceo-accent-dark) !important;
+
+}
+
+/* outline buttons */
+
+.button,
+input[type="submit"],
+input[type="reset"],
+input[type="button"],
+button {
+
+  border-color: var(--ceo-accent) !important;
+  color: white !important;
+
+}.icon.major:before {
+  color: var(--ceo-accent) !important;
+}
+
+.icon.major {
+  background: rgba(92,103,125,0.15) !important;
+}h1.major:after,
+h2.major:after,
+h3.major:after {
+
+  background-image: linear-gradient(
+    to right,
+    var(--ceo-accent),
+    var(--ceo-navy)
+  ) !important;
+
+}#header,
+#header.alt {
+
+  background: var(--ceo-navy) !important;
+
+}
