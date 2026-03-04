@@ -6,3 +6,74 @@
 body.ceo-no-sidebar #wrapper { margin-left: 0 !important; }
 body.ceo-no-sidebar #intro { padding-left: 0 !important; }
 body.ceo-no-sidebar #wrapper > section { padding-left: 0 !important; }
+/* Pages with top header (no sidebar) */
+body.ceo-no-sidebar #wrapper { margin-left: 0 !important; }
+body.ceo-no-sidebar #intro,
+body.ceo-no-sidebar #wrapper > section { padding-left: 0 !important; }
+
+/* Ensure header is not offset and truly centered */
+body.ceo-no-sidebar #header {
+  left: 0;
+  width: 100%;
+}
+
+body.ceo-no-sidebar #header .inner {
+  width: 100%;
+  max-width: none;
+  display: flex;
+  justify-content: center;   /* centers logo + nav as a unit */
+  align-items: center;
+  gap: 2rem;
+}
+
+/* Keep the logo crisp (avoid weird inline spacing) */
+body.ceo-no-sidebar #header .logo img {
+  display: block;
+  height: 42px;
+  width: auto;
+}/* =========
+   FORCE TRUE CENTERING FOR THE TOP HEADER ON WIDE SCREENS
+   (Index + other pages using <header id="header">)
+   ========= */
+
+/* Make header span full viewport and remove template offsets */
+body.ceo-no-sidebar #header {
+  left: 0 !important;
+  width: 100% !important;
+}
+
+/* Remove Hyperspace "inner" max-width centering constraints that cause visual drift */
+body.ceo-no-sidebar #header .inner {
+  max-width: none !important;
+  width: 100% !important;
+
+  /* Use full-viewport centering */
+  display: flex !important;
+  justify-content: center !important;   /* centers logo+nav as a unit */
+  align-items: center !important;
+
+  /* Keep consistent breathing room without shifting the center */
+  padding-left: 2rem !important;
+  padding-right: 2rem !important;
+
+  /* Optional: if header height feels tight */
+  min-height: 72px;
+}
+
+/* Make the logo render crisp and avoid inline baseline quirks */
+body.ceo-no-sidebar #header .logo img {
+  display: block;
+  height: 42px;
+  width: auto;
+}
+
+/* Normalize UL spacing so it doesn’t “pull” left/right */
+body.ceo-no-sidebar #header nav ul {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+/* Optional: if your nav items have odd offsets */
+body.ceo-no-sidebar #header nav ul li {
+  padding-left: 0 !important;
+}
