@@ -311,3 +311,103 @@ h3.major:after {
   background: var(--ceo-navy) !important;
 
 }
+/* ===== Top Header Bar (About / FAQ / interior pages) ===== */
+#header,
+#header.alt {
+  background: var(--ceo-navy) !important;
+}
+
+/* Keep header text/nav readable */
+#header a,
+#header nav a,
+#header .logo {
+  color: #fff !important;
+}
+
+/* Remove any purple border/gradient separators if present */
+#header:after,
+#header nav a:before,
+#header nav a:after {
+  background: rgba(201,162,39,0.55) !important; /* subtle gold accent */
+  background-image: none !important;
+}/* ===== UNIVERSAL BUTTON STYLE ===== */
+
+.button,
+.button.primary,
+input[type="submit"],
+input[type="submit"].primary,
+input[type="button"],
+input[type="button"].primary,
+button,
+button.primary {
+
+  background-color: #5C677D !important;
+  border-color: #5C677D !important;
+  color: #ffffff !important;
+
+}
+
+/* Hover state */
+
+.button:hover,
+.button.primary:hover,
+input[type="submit"]:hover,
+input[type="button"]:hover,
+button:hover {
+
+  background-color: #4A5568 !important;
+  border-color: #4A5568 !important;
+  color: #ffffff !important;
+
+}
+.wrapper.style2 .button,
+.wrapper.style2 button,
+.wrapper.style2 input[type="submit"],
+.wrapper.style2 input[type="button"] {
+
+  background-color: #5C677D !important;
+  border-color: #5C677D !important;
+  color: #ffffff !important;
+
+}#sidebar nav a:before,
+#sidebar nav a:after,
+#sidebar nav ul li a:before,
+#sidebar nav ul li a:after {
+
+  background: #5C677D !important;
+  background-image: none !important;
+
+}.label,
+.badge,
+.tag {
+
+  background: #5C677D !important;
+  color: #ffffff !important;
+
+}/* ===== Top Header Bar (About / FAQ / interior pages) ===== */
+
+#header,
+#header.alt {
+  background: #ffffff !important;   /* white header */
+  border-bottom: 1px solid rgba(0,0,0,0.08); /* subtle divider */
+}
+
+/* Navigation links */
+#header a,
+#header nav a,
+#header .logo {
+  color: #0B1F3B !important;   /* CEO navy text */
+}
+
+/* Hover state */
+#header nav a:hover {
+  color: #5C677D !important;   /* slate hover */
+}
+
+/* Remove purple/gold gradients from template */
+#header:after,
+#header nav a:before,
+#header nav a:after {
+  background: #5C677D !important;  /* slate accent line */
+  background-image: none !important;
+}
