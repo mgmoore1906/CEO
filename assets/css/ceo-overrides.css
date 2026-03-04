@@ -615,4 +615,250 @@ body { padding-top: 3.5em; }
   padding: 0;
 }#header .logo img {
   height: 64px;
+}/* ===== FINAL: header + nav perfectly centered ===== */
+
+#header {
+  background: #fff !important;
+  border-bottom: 1px solid rgba(0,0,0,0.08);
+  display: grid !important;
+  grid-template-columns: auto 1fr;   /* logo | nav */
+  align-items: center !important;
+  padding: 0 2rem !important;
+  min-height: 92px !important;       /* adjust 84–96px if you want */
+}
+
+/* Logo block: no baseline spacing */
+#header .logo {
+  display: flex !important;
+  align-items: center !important;
+  line-height: 0 !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+#header .logo img {
+  height: 60px !important;           /* adjust 56–66px */
+  width: auto !important;
+  display: block !important;
+}
+
+/* Nav block centered in remaining space */
+#header nav {
+  justify-self: end !important;
+  align-self: center !important;
+  height: 100% !important;
+  display: flex !important;
+  align-items: center !important;
+}
+
+/* UL baseline reset */
+#header nav ul {
+  margin: 0 !important;
+  padding: 0 !important;
+  display: flex !important;
+  align-items: center !important;
+  gap: 2.6rem !important;
+}
+
+/* LI reset */
+#header nav li {
+  list-style: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  display: flex !important;
+  align-items: center !important;
+}
+
+/* THE KEY: remove template vertical padding + force true centering */
+#header nav a {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  line-height: 1 !important;
+  height: 92px !important;          /* match header min-height */
+  position: relative !important;
+  top: 0 !important;
+  transform: none !important;
+}/* Prevent accidental image softening */
+.image img,
+img {
+  filter: none !important;
+  transform: none !important;
+}/* ===== CENTERED HEADER LAYOUT ===== */
+
+#header {
+  background: #ffffff !important;
+  border-bottom: 1px solid rgba(0,0,0,0.08);
+}
+
+/* Centered container */
+#header .inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 80px;            /* space between logo and nav */
+  height: 90px;
+}
+
+/* Logo */
+
+#header .logo img {
+  height: 60px;
+  width: auto;
+  display: block;
+}
+
+/* Navigation */
+
+#header nav ul {
+  display: flex;
+  align-items: center;
+  gap: 2.4rem;
+  margin: 0;
+  padding: 0;
+}
+
+#header nav li {
+  list-style: none;
+}
+
+#header nav a {
+  text-decoration: none;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+}#header nav ul {
+  gap: 2.8rem;
+}#header .logo img {
+  height: 68px;
+}/* ===== Wide-screen header: single-line nav, centered ===== */
+
+#header {
+  background: #fff !important;
+  border-bottom: 1px solid rgba(0,0,0,0.08);
+}
+
+/* centered container */
+#header .inner {
+  max-width: 1320px;          /* gives more room on wide screens */
+  margin: 0 auto;
+  padding: 0 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* logo left, nav right (like Hidden Genius) */
+  height: 92px;
+}
+
+/* logo */
+#header .logo {
+  display: flex;
+  align-items: center;
+  line-height: 0;
+}
+#header .logo img {
+  height: 60px;
+  width: auto;
+  display: block;
+}
+
+/* nav */
+#header nav {
+  display: flex;
+  align-items: center;
+}
+
+#header nav ul {
+  display: flex;
+  align-items: center;
+  gap: 28px;                  /* tighter spacing */
+  margin: 0;
+  padding: 0;
+  flex-wrap: nowrap;          /* prevent wrapping */
+  white-space: nowrap;        /* prevent wrapping */
+}
+
+#header nav li {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* text treatment */
+#header nav a {
+  display: inline-flex;
+  align-items: center;
+  height: 92px;
+  line-height: 1;
+  padding: 0;
+  font-size: 12px;            /* smaller like Hidden Genius */
+  letter-spacing: 0.14em;     /* less than before */
+  text-transform: uppercase;
+  color: #0B1F3B !important;
+  text-decoration: none;
+}
+
+#header nav a:hover {
+  color: #5C677D !important;
+}/* ===== Centered header layout (logo + nav together) ===== */
+
+#header {
+  background: #ffffff !important;
+  border-bottom: 1px solid rgba(0,0,0,0.08);
+}
+
+/* centered container */
+#header .inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  height: 92px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;   /* centers logo + nav together */
+  gap: 60px;                 /* space between logo and nav */
+}
+
+/* logo */
+#header .logo {
+  display: flex;
+  align-items: center;
+}
+
+#header .logo img {
+  height: 64px;
+  width: auto;
+  display: block;
+}
+
+/* navigation */
+#header nav ul {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  margin: 0;
+  padding: 0;
+  white-space: nowrap;
+}
+
+#header nav li {
+  list-style: none;
+}
+
+#header nav a {
+  display: flex;
+  align-items: center;
+  font-size: 12px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  line-height: 1;
+  color: #0B1F3B !important;
+  text-decoration: none;
+}
+
+#header .logo img {
+  height: 68px;
 }
