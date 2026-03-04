@@ -3,62 +3,79 @@
 */
 
 :root {
-  --ceo-navy: #1B304F;
-  --ceo-navy-dark: #14253D;
-  --ceo-navy-light: #28466F;
+  --ceo-navy: #0b1f3b;
+  --ceo-navy-2: #08162a;   /* darker navy for contrast */
+  --ceo-gold: #c9a227;
+  --ceo-light: #f4f6fb;
+  --ceo-white: #ffffff;
 }
 
+/* Global */
 body {
-  background: var(--ceo-navy-dark);
+  background: var(--ceo-navy-2);
 }
 
 a {
-  color: #ffffff;
+  color: rgba(255,255,255,0.92);
 }
-
 a:hover {
-  color: rgba(255,255,255,0.85);
+  color: var(--ceo-white);
 }
 
-/* Sidebar */
+/* Sidebar / Nav */
 #sidebar {
-  background: var(--ceo-navy);
+  background: var(--ceo-navy) !important;
 }
 #sidebar a {
   color: rgba(255,255,255,0.92);
 }
 #sidebar a:hover {
-  color: #ffffff;
+  color: var(--ceo-white);
+}
+
+/* HERO (first section) */
+#intro {
+  background: var(--ceo-navy) !important;
 }
 
 /* Section backgrounds (Hyperspace uses style1/style2/style3 etc.) */
-.wrapper.style1 {
-  background: var(--ceo-navy);
-}
-.wrapper.style2 {
-  background: var(--ceo-navy-dark);
-}
+.wrapper.style1,
 .wrapper.style3 {
-  background: var(--ceo-navy);
+  background: var(--ceo-navy) !important;
 }
-.wrapper.alt {
-  background: var(--ceo-navy-dark);
+
+/* Use a clean light section for contrast (your “Program Model” area) */
+.wrapper.style2 {
+  background: var(--ceo-light) !important;
+  color: #1b1f2a; /* make text readable on light bg */
+}
+
+/* Ensure headings read correctly on both dark + light sections */
+h1, h2, h3 {
+  color: var(--ceo-white);
+}
+.wrapper.style2 h1,
+.wrapper.style2 h2,
+.wrapper.style2 h3 {
+  color: var(--ceo-navy);
 }
 
 /* Buttons */
+.button.primary,
 input[type="submit"].primary,
 input[type="reset"].primary,
 input[type="button"].primary,
-button.primary,
-.button.primary {
-  background-color: var(--ceo-navy-light) !important;
+button.primary {
+  background-color: var(--ceo-gold) !important;
+  border-color: var(--ceo-gold) !important;
+  color: #111 !important; /* better contrast on gold */
 }
+.button.primary:hover,
 input[type="submit"].primary:hover,
 input[type="reset"].primary:hover,
 input[type="button"].primary:hover,
-button.primary:hover,
-.button.primary:hover {
-  filter: brightness(1.08);
+button.primary:hover {
+  filter: brightness(1.05);
 }
 
 /* Accent lines */
@@ -66,7 +83,7 @@ hr {
   border-bottom-color: rgba(255,255,255,0.18);
 }
 
-/* Reduce any purple glow/shadows */
+/* Remove any template glow/shadow that reads purple */
 #sidebar + #wrapper {
   box-shadow: none;
 }
