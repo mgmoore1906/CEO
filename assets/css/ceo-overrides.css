@@ -421,4 +421,198 @@ body { padding-top: 3.5em; }
   height: 34px;
   width: auto;
   display: block;
+}#header {
+  padding: 0 2rem;
+  height: 78px;
+}
+
+#header .logo img {
+  height: 54px;
+}
+
+#header nav ul {
+  gap: 2.4rem;
+}#header {
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+}/* ===== Header alignment reset (logo + nav centered) ===== */
+#header {
+  background: #fff !important;
+  border-bottom: 1px solid rgba(0,0,0,0.08);
+  display: flex;
+  align-items: center;          /* vertical centering */
+  justify-content: space-between;
+  padding: 0 2rem;
+  min-height: 76px;             /* avoids weird squeezing */
+}
+
+#header .logo {
+  display: flex;
+  align-items: center;          /* centers logo vertically */
+  margin: 0;
+  padding: 0;
+}
+
+/* Display smaller, but use the 3x PNG for crispness */
+#header .logo img {
+  height: 52px;
+  width: auto;
+  display: block;
+}
+
+/* Nav alignment */
+#header nav {
+  display: flex;
+  align-items: center;
+}
+
+#header nav ul {
+  display: flex;
+  align-items: center;          /* centers nav items vertically */
+  gap: 2.2rem;
+  margin: 0;
+  padding: 0;
+}
+
+#header nav li {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+#header nav a {
+  display: flex;
+  align-items: center;          /* centers text within row */
+  height: 76px;                 /* matches header min-height */
+  line-height: 1;
+  color: #0B1F3B !important;
+  text-decoration: none;
+  letter-spacing: 0.12em;
+}
+
+#header nav a:hover {
+  color: #5C677D !important;
+}/* ===== HARD RESET: vertically center header nav ===== */
+
+/* Make the header a consistent height */
+#header {
+  min-height: 86px !important;     /* increase if you want more breathing room */
+  display: flex !important;
+  align-items: center !important;
+}
+
+/* Ensure nav itself is centered */
+#header nav {
+  height: 86px !important;
+  display: flex !important;
+  align-items: center !important;
+}
+
+/* Kill template spacing that pushes text upward */
+#header nav ul {
+  margin: 0 !important;
+  padding: 0 !important;
+  height: 86px !important;
+  display: flex !important;
+  align-items: center !important;
+  gap: 2.2rem;
+}
+
+/* Each nav item + link becomes a centered “box” */
+#header nav li {
+  margin: 0 !important;
+  padding: 0 !important;
+  height: 86px !important;
+  display: flex !important;
+  align-items: center !important;
+}
+
+#header nav a {
+  margin: 0 !important;
+  padding: 0 0.25rem !important;
+  height: 86px !important;
+  display: flex !important;
+  align-items: center !important;   /* THIS is the key */
+  line-height: 1 !important;
+  position: relative !important;
+  top: 0 !important;
+  transform: none !important;
+}/* Center navigation within header */
+
+#header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Center nav vertically */
+
+#header nav {
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+
+/* Ensure the list aligns perfectly */
+
+#header nav ul {
+  display: flex;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+}
+
+/* Remove any template offsets */
+
+#header nav a {
+  position: relative;
+  top: 0;
+}/* ===== Final Header Alignment ===== */
+
+#header {
+  display: flex;
+  align-items: center;        /* vertically centers everything */
+  justify-content: space-between;
+  padding: 0 2rem;
+  min-height: 90px;           /* gives breathing room for logo */
+}
+
+/* Logo alignment */
+
+#header .logo {
+  display: flex;
+  align-items: center;
+}
+
+#header .logo img {
+  height: 58px;               /* slightly larger logo */
+  width: auto;
+}
+
+/* Navigation alignment */
+
+#header nav {
+  display: flex;
+  align-items: center;
+}
+
+#header nav ul {
+  display: flex;
+  align-items: center;
+  gap: 2.4rem;
+  margin: 0;
+  padding: 0;
+}
+
+#header nav li {
+  list-style: none;
+}
+
+#header nav a {
+  display: flex;
+  align-items: center;
+  height: auto;
+  line-height: 1;
+  padding: 0;
+}#header .logo img {
+  height: 64px;
 }
