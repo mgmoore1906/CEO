@@ -87,3 +87,47 @@ hr {
 #sidebar + #wrapper {
   box-shadow: none;
 }
+/* === Kill remaining Hyperspace purple accents === */
+
+/* Purple underline gradient under major headings */
+h1.major:after,
+h2.major:after,
+h3.major:after {
+  background-image: linear-gradient(to right, var(--ceo-gold), var(--ceo-navy)) !important;
+}
+
+/* Link accents that still inherit purple in some components */
+a {
+  color: rgba(255,255,255,0.92);
+}
+.wrapper.style2 a {
+  color: var(--ceo-navy);
+}
+.wrapper.style2 a:hover {
+  color: rgba(11,31,59,0.8);
+}
+
+/* Form focus (often shows as purple border/glow) */
+input:focus,
+select:focus,
+textarea:focus {
+  border-color: var(--ceo-gold) !important;
+  box-shadow: 0 0 0 1px var(--ceo-gold) !important;
+}
+
+/* Icon “major” badges sometimes keep a theme color */
+.icon.major {
+  background: rgba(201,162,39,0.18) !important; /* subtle gold wash */
+}
+.wrapper.style2 .icon.major {
+  background: rgba(11,31,59,0.08) !important; /* subtle navy wash on light bg */
+}
+
+/* Any gradient buttons/accents that slip through */
+.button.primary,
+input[type="submit"].primary,
+input[type="reset"].primary,
+input[type="button"].primary,
+button.primary {
+  background-image: none !important;
+}
