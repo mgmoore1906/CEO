@@ -410,4 +410,15 @@ button:hover {
 #header nav a:after {
   background: #5C677D !important;  /* slate accent line */
   background-image: none !important;
+}/* ===== Homepage now uses top header: disable sidebar layout rules ===== */
+#sidebar { display: none !important; }
+#sidebar + #wrapper { margin-left: 0 !important; }
+#wrapper { margin-left: 0 !important; }
+
+/* Make sure content doesn't hide behind the fixed header */
+body { padding-top: 3.5em; }
+#header .logo img {
+  height: 34px;
+  width: auto;
+  display: block;
 }
