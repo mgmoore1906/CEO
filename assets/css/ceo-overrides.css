@@ -131,3 +131,87 @@ input[type="button"].primary,
 button.primary {
   background-image: none !important;
 }
+/* =========================================================
+   CEO PATCH: remove remaining Hyperspace purple/fuchsia
+   ========================================================= */
+
+/* 1) Sidebar nav: kill purple/fuchsia underline/gradient rules */
+#sidebar nav a:before,
+#sidebar nav a:after,
+#sidebar nav ul li a:before,
+#sidebar nav ul li a:after {
+  background-image: none !important;
+  background: rgba(201, 162, 39, 0.55) !important; /* subtle gold line */
+}
+
+/* If your nav uses border lines instead of pseudo-elements */
+#sidebar nav a {
+  border-bottom-color: rgba(201, 162, 39, 0.35) !important;
+}
+
+/* 2) Headings: replace the purple→fuchsia underline gradient */
+h1.major:after,
+h2.major:after,
+h3.major:after {
+  background-image: linear-gradient(to right, var(--ceo-gold), var(--ceo-navy)) !important;
+}
+
+/* 3) Program Model icons: replace fuchsia */
+.icon.major {
+  background: rgba(201, 162, 39, 0.20) !important; /* gold wash */
+}
+.icon.major:before {
+  color: var(--ceo-gold) !important;
+}
+
+/* If icons are inside the light (off-white) section, use navy instead */
+.wrapper.style2 .icon.major {
+  background: rgba(11, 31, 59, 0.08) !important;
+}
+.wrapper.style2 .icon.major:before {
+  color: var(--ceo-navy) !important;
+}
+
+/* 4) “Text bubbles” / labels / pills that are gold or wrong */
+.label,
+.badge,
+.tag {
+  background: rgba(201, 162, 39, 0.22) !important;
+  color: var(--ceo-white) !important;
+}
+.wrapper.style2 .label,
+.wrapper.style2 .badge,
+.wrapper.style2 .tag {
+  background: rgba(11, 31, 59, 0.10) !important;
+  color: var(--ceo-navy) !important;
+}
+
+/* 5) Make About / Who We Support / FAQ match index background
+      (those pages often use .wrapper without style1/style2 classes) */
+.wrapper {
+  background: var(--ceo-navy) !important;
+}
+#main.wrapper {
+  background: var(--ceo-navy) !important;
+}
+
+/* 6) Fix readability: any light/off-white section must have dark text */
+.wrapper.style2,
+.wrapper.style2 p,
+.wrapper.style2 li,
+.wrapper.style2 a,
+.wrapper.style2 strong,
+.wrapper.style2 b {
+  color: #1b1f2a !important;
+}
+
+.wrapper.style2 a:hover {
+  color: rgba(11, 31, 59, 0.80) !important;
+}
+
+/* Optional: ensure other “light” variants also flip to dark text if present */
+.wrapper.alt,
+.wrapper.alt p,
+.wrapper.alt li {
+  color: #1b1f2a;
+}
