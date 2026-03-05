@@ -19,12 +19,16 @@
 <!-- Sidebar -->
 <header id="header">
   <div class="inner">
-
     <a href="index.html" class="logo">
       <img src="images/ceo_logo_header_lockup_3x.png" alt="Cohort for Economic Opportunity">
     </a>
 
-    <nav>
+    <!-- Mobile toggle -->
+    <button class="nav-toggle" type="button" aria-controls="site-nav" aria-expanded="false">
+      Menu
+    </button>
+
+    <nav id="site-nav">
       <ul>
         <li><a href="index.html#intro">Home</a></li>
         <li><a href="about.html">About Us</a></li>
@@ -35,7 +39,6 @@
         <li><a href="faq.html">FAQ</a></li>
       </ul>
     </nav>
-
   </div>
 </header>
 <!-- Wrapper -->
@@ -214,5 +217,25 @@
 <script src="assets/js/breakpoints.min.js"></script>
 <script src="assets/js/util.js"></script>
 <script src="assets/js/main.js"></script>
+<script>
+  (function () {
+    const btn = document.querySelector('.nav-toggle');
+    const nav = document.getElementById('site-nav');
+    if (!btn || !nav) return;
+
+    btn.addEventListener('click', function () {
+      const isOpen = document.body.classList.toggle('nav-open');
+      btn.setAttribute('aria-expanded', String(isOpen));
+    });
+
+    // Close menu after tapping a link (nice on mobile)
+    nav.addEventListener('click', function (e) {
+      if (e.target && e.target.tagName === 'A') {
+        document.body.classList.remove('nav-open');
+        btn.setAttribute('aria-expanded', 'false');
+      }
+    });
+  })();
+</script>
 </body>
 </html>
