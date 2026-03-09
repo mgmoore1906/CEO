@@ -4139,17 +4139,4 @@ body.is-sidebar-visible #sidebar nav li.active a:after {
 		justify-content: flex-start !important;
 		padding-top: 1.75rem !important;
 	}
-
-	.ceo-sidebar-logo {
-		margin: 0 0 1.25rem 0 !important;
-	}
-
-	.ceo-sidebar-logo img {
-		width: 320px !important;
-		max-width: 95% !important;
-	}
-
-	#sidebar nav {
-		width: 100% !important;
-	}
 }
