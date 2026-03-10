@@ -3357,4 +3357,64 @@ input, select, textarea {
 				text-align: left;
 			}
 
-	}
+	}/* CEO HERO SECTION */
+
+.hero-ceo {
+    background-image: linear-gradient(
+        rgba(10, 30, 60, 0.75),
+        rgba(10, 30, 60, 0.75)
+    ),
+    url("../../images/hero-students.jpeg");
+
+    background-size: cover;
+    background-position: center;
+    padding: 140px 0;
+}
+
+.hero-ceo h2 {
+    color: white;
+    font-size: 3rem;
+    font-weight: 700;
+}
+
+.hero-ceo .button {
+    margin-top: 20px;
+}/* CEO PILLAR COLORS */
+
+.pillar-blue {
+    color: #1f4e79;
+}
+
+.pillar-gold {
+    color: #c8a045;
+}
+
+.pillar-navy {
+    color: #0d2b45;
+}/* TYPOGRAPHY UPGRADE */
+
+h1, h2, h3 {
+    font-weight: 700;
+}
+
+.wrapper.style2 h2 {
+    font-size: 2.6rem;
+    line-height: 1.2;
+}
+
+.box.highlight h3 {
+    font-size: 1.4rem;
+}
+
+#banner h2 {
+    font-size: 3.2rem;
+}/* HOVER ANIMATION */
+
+.box.highlight {
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.box.highlight:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
