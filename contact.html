@@ -324,9 +324,50 @@
   }
 
   .faq-item.open .faq-answer { display: block; }
+
+
+
+</style>
+/* ── CONTACT RESPONSIVE ── */
+@media (max-width: 900px) {
+  .contact-body             { padding: 64px 28px; grid-template-columns: 1fr; gap: 52px; }
+  .contact-info h2          { font-size: 34px; }
+  .location-band            { padding: 64px 28px; grid-template-columns: 1fr; gap: 36px; }
+  .location-content h2      { font-size: 30px; }
+  .location-map             { display: none; }
+  .faq                      { padding: 64px 28px; }
+}
+@media (max-width: 600px) {
+  .contact-body             { padding: 52px 16px; }
+  .contact-info h2          { font-size: 26px; }
+  .contact-info > p         { font-size: 14px; }
+  .contact-form-wrap        { padding: 28px 16px; }
+  .contact-form-wrap h3     { font-size: 22px; }
+  .cf-row                   { grid-template-columns: 1fr; }
+  .contact-details          { gap: 20px; }
+  .contact-socials          { gap: 8px; }
+  .social-pill              { padding: 8px 12px; font-size: 11px; gap: 6px; }
+  .inquiry-type             { padding: 12px 14px; }
+  .location-band            { padding: 52px 16px; }
+  .location-content h2      { font-size: 24px; }
+  .faq                      { padding: 52px 16px; }
+  .faq-question             { font-size: 13px; padding: 18px 0; }
+}
 </style>
 </head>
 <body>
+
+<!-- MOBILE NAV DRAWER -->
+<div class="nav-mobile-drawer" id="mobileDrawer">
+  <button class="drawer-close" onclick="document.getElementById('mobileDrawer').classList.remove('open')">&times;</button>
+  <a href="about.html">About</a>
+  <a href="programs.html">Programs</a>
+  <a href="get-involved.html">Get Involved</a>
+  <a href="impact.html">Impact</a>
+  <a href="news.html">News</a>
+  <a href="contact.html">Contact</a>
+  <a href="get-involved.html" class="drawer-cta">Apply Now</a>
+</div>
 
 <nav>
   <a href="index.html"><img class="logo" src="assets/logo-main.png" alt="Cohort for Economic Opportunity"></a>
@@ -339,6 +380,9 @@
     <li><a href="contact.html">Contact</a></li>
   </ul>
   <a href="get-involved.html" class="nav-cta">Apply Now</a>
+  <button class="nav-hamburger" onclick="document.getElementById('mobileDrawer').classList.add('open')">
+    <span></span><span></span><span></span>
+  </button>
 </nav>
 
 <!-- PAGE HEADER -->

@@ -269,9 +269,55 @@
   }
 
   .newsletter-form button:hover { background: var(--white); }
+
+
+
+</style>
+/* ── NEWS RESPONSIVE ── */
+@media (max-width: 900px) {
+  .featured-post            { padding: 64px 28px; grid-template-columns: 1fr; gap: 36px; }
+  .fp-photo                 { display: none; }
+  .fp-content h2            { font-size: 30px; }
+  .news-section             { padding: 64px 28px; }
+  .news-filter              { gap: 8px; flex-wrap: wrap; }
+  .news-grid                { grid-template-columns: 1fr 1fr; gap: 28px; }
+  .press                    { padding: 56px 28px; }
+  .press-grid               { grid-template-columns: 1fr 1fr; gap: 14px; }
+  .newsletter               { padding: 56px 28px; }
+  .newsletter h2            { font-size: 30px; }
+}
+@media (max-width: 600px) {
+  .featured-post            { padding: 52px 16px; }
+  .fp-content h2            { font-size: 24px; }
+  .fp-content p             { font-size: 14px; }
+  .news-section             { padding: 52px 16px; }
+  .filter-chip              { padding: 7px 12px; font-size: 10px; }
+  .news-grid                { grid-template-columns: 1fr; gap: 32px; }
+  .nc-title                 { font-size: 18px; }
+  .press                    { padding: 44px 16px; }
+  .press-grid               { grid-template-columns: 1fr; }
+  .press-card               { padding: 20px 16px; }
+  .newsletter               { padding: 44px 16px; }
+  .newsletter h2            { font-size: 24px; }
+  .newsletter-form          { flex-direction: column; }
+  .newsletter-form input    { border-right: 1px solid rgba(255,255,255,0.15); }
+  .newsletter-form button   { width: 100%; }
+}
 </style>
 </head>
 <body>
+
+<!-- MOBILE NAV DRAWER -->
+<div class="nav-mobile-drawer" id="mobileDrawer">
+  <button class="drawer-close" onclick="document.getElementById('mobileDrawer').classList.remove('open')">&times;</button>
+  <a href="about.html">About</a>
+  <a href="programs.html">Programs</a>
+  <a href="get-involved.html">Get Involved</a>
+  <a href="impact.html">Impact</a>
+  <a href="news.html">News</a>
+  <a href="contact.html">Contact</a>
+  <a href="get-involved.html" class="drawer-cta">Apply Now</a>
+</div>
 
 <nav>
   <a href="index.html"><img class="logo" src="assets/logo-main.png" alt="Cohort for Economic Opportunity"></a>
@@ -284,6 +330,9 @@
     <li><a href="contact.html">Contact</a></li>
   </ul>
   <a href="get-involved.html" class="nav-cta">Apply Now</a>
+  <button class="nav-hamburger" onclick="document.getElementById('mobileDrawer').classList.add('open')">
+    <span></span><span></span><span></span>
+  </button>
 </nav>
 
 <!-- PAGE HEADER -->

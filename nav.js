@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  // ── Fade-in on scroll (Intersection Observer) ──
+  // ── Fade-in on scroll ──
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
@@ -30,5 +30,16 @@ document.addEventListener('DOMContentLoaded', () => {
   document.querySelectorAll('.animate-on-scroll').forEach(el => {
     observer.observe(el);
   });
+
+  // ── Mobile drawer: close on backdrop click or Escape ──
+  const drawer = document.getElementById('mobileDrawer');
+  if (drawer) {
+    drawer.addEventListener('click', (e) => {
+      if (e.target === drawer) drawer.classList.remove('open');
+    });
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') drawer.classList.remove('open');
+    });
+  }
 
 });
