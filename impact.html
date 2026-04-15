@@ -1,0 +1,630 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Impact – Cohort for Economic Opportunity</title>
+<link rel="stylesheet" href="styles.css">
+<style>
+
+  /* ── IMPACT NUMBERS ── */
+  .impact-numbers {
+    background: var(--navy-deep);
+    padding: 100px 120px;
+  }
+
+  .impact-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2px;
+    background: rgba(255,255,255,0.05);
+    margin-top: 72px;
+  }
+
+  .impact-box {
+    background: var(--navy-deep);
+    padding: 52px 36px;
+    text-align: center;
+    transition: background 0.3s;
+  }
+
+  .impact-box:hover { background: var(--navy-mid); }
+
+  .impact-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 64px;
+    font-weight: 900;
+    color: var(--accent);
+    line-height: 1;
+    margin-bottom: 12px;
+  }
+
+  .impact-label {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 12px;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.5);
+    font-weight: 600;
+    margin-bottom: 12px;
+  }
+
+  .impact-sub {
+    font-size: 13px;
+    color: rgba(255,255,255,0.3);
+    line-height: 1.6;
+    font-weight: 300;
+  }
+
+  /* ── FEATURED STORY ── */
+  .featured-story {
+    padding: 120px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+    background: var(--grey-pale);
+  }
+
+  .featured-photo {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 3/4;
+  }
+
+  .featured-photo .photo-placeholder { width: 100%; height: 100%; }
+
+  .featured-photo-tag {
+    position: absolute;
+    bottom: -1px;
+    right: -1px;
+    background: var(--accent);
+    padding: 16px 24px;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 700;
+    font-size: 12px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--navy-deep);
+  }
+
+  .featured-content .section-label { margin-bottom: 16px; }
+
+  .featured-content h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 44px;
+    font-weight: 900;
+    color: var(--navy-deep);
+    line-height: 1.1;
+    margin-bottom: 24px;
+  }
+
+  .featured-content blockquote {
+    font-family: 'Playfair Display', serif;
+    font-size: 22px;
+    font-style: italic;
+    color: var(--navy);
+    border-left: 3px solid var(--accent);
+    padding-left: 24px;
+    margin: 28px 0;
+    line-height: 1.5;
+  }
+
+  .featured-content p {
+    font-size: 15px;
+    line-height: 1.85;
+    color: #4a5568;
+    font-weight: 300;
+    margin-bottom: 14px;
+  }
+
+  .fellow-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    margin-top: 8px;
+  }
+
+  .fellow-avatar {
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    background: var(--grey-light);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .fellow-name {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 700;
+    font-size: 15px;
+    text-transform: uppercase;
+    color: var(--navy-deep);
+  }
+
+  .fellow-cohort {
+    font-size: 12px;
+    color: var(--grey);
+  }
+
+  /* ── TESTIMONIALS GRID ── */
+  .testimonials-section {
+    padding: 120px;
+    background: var(--white);
+  }
+
+  .testi-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    margin-top: 72px;
+  }
+
+  .testi-card {
+    padding: 44px 36px;
+    border: 1px solid var(--grey-light);
+    position: relative;
+    transition: border-color 0.3s, box-shadow 0.3s;
+  }
+
+  .testi-card:hover {
+    border-color: var(--accent);
+    box-shadow: 0 8px 32px rgba(13,26,51,0.08);
+  }
+
+  .testi-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    background: var(--grey-light);
+    transition: background 0.3s;
+  }
+
+  .testi-card:hover::before { background: var(--accent); }
+
+  .testi-quote {
+    font-family: 'Playfair Display', serif;
+    font-size: 52px;
+    color: var(--accent);
+    line-height: 0.6;
+    margin-bottom: 20px;
+    display: block;
+    opacity: 0.5;
+  }
+
+  .testi-text {
+    font-size: 15px;
+    line-height: 1.8;
+    color: #4a5568;
+    margin-bottom: 28px;
+    font-weight: 300;
+  }
+
+  .testi-person {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+
+  .testi-avatar {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: var(--grey-light);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .testi-name {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 700;
+    font-size: 15px;
+    text-transform: uppercase;
+    color: var(--navy-deep);
+    letter-spacing: 0.5px;
+  }
+
+  .testi-role {
+    font-size: 12px;
+    color: var(--grey);
+    margin-top: 2px;
+  }
+
+  /* ── OUTCOMES ── */
+  .outcomes {
+    background: var(--navy-deep);
+    padding: 120px;
+  }
+
+  .outcomes-bars {
+    margin-top: 72px;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+  }
+
+  .outcome-row {
+    display: grid;
+    grid-template-columns: 260px 1fr 80px;
+    align-items: center;
+    gap: 24px;
+  }
+
+  .outcome-label {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 14px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.7);
+    font-weight: 600;
+    text-align: right;
+  }
+
+  .outcome-bar-track {
+    height: 8px;
+    background: rgba(255,255,255,0.08);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .outcome-bar-fill {
+    position: absolute;
+    top: 0; left: 0; bottom: 0;
+    background: var(--accent);
+    transition: width 1s ease;
+  }
+
+  .outcome-pct {
+    font-family: 'Playfair Display', serif;
+    font-size: 24px;
+    font-weight: 900;
+    color: var(--accent);
+  }
+
+  /* ── GEOGRAPHIC ── */
+  .geographic {
+    padding: 100px 120px;
+    background: var(--grey-pale);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+  }
+
+  .geo-content .section-label { margin-bottom: 16px; }
+
+  .geo-content h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 44px;
+    font-weight: 900;
+    color: var(--navy-deep);
+    margin-bottom: 24px;
+    line-height: 1.1;
+  }
+
+  .geo-content p {
+    font-size: 15px;
+    line-height: 1.85;
+    color: #4a5568;
+    font-weight: 300;
+    margin-bottom: 14px;
+  }
+
+  .geo-cities {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 28px;
+  }
+
+  .geo-city {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 14px 20px;
+    background: var(--white);
+    border-left: 3px solid var(--grey-light);
+    transition: border-color 0.2s;
+  }
+
+  .geo-city:hover { border-color: var(--accent); }
+
+  .geo-city-name {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 700;
+    font-size: 15px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: var(--navy-deep);
+  }
+
+  .geo-city-count {
+    font-size: 13px;
+    color: var(--grey);
+  }
+
+  .geo-map-placeholder {
+    width: 100%;
+    aspect-ratio: 4/3;
+  }
+
+  .geo-map-placeholder .photo-placeholder { width: 100%; height: 100%; min-height: 320px; }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html"><img class="logo" src="assets/logo-main.png" alt="Cohort for Economic Opportunity"></a>
+  <ul>
+    <li><a href="about.html">About</a></li>
+    <li><a href="programs.html">Programs</a></li>
+    <li><a href="get-involved.html">Get Involved</a></li>
+    <li><a href="impact.html">Impact</a></li>
+    <li><a href="news.html">News</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+  <a href="get-involved.html" class="nav-cta">Apply Now</a>
+</nav>
+
+<!-- PAGE HEADER -->
+<header class="page-header">
+  <div class="page-header-content">
+    <div class="section-label">Our Impact</div>
+    <h1>Changing <em>Trajectories,</em><br>One Student at a Time</h1>
+    <p>We measure success in economic mobility — careers started, barriers cleared, and generational patterns disrupted.</p>
+  </div>
+</header>
+
+<!-- IMPACT NUMBERS -->
+<section class="impact-numbers">
+  <div class="section-title-center">
+    <div class="section-label" style="justify-content:center;"><span>By the Numbers</span></div>
+    <h2 class="light">The Results Speak</h2>
+  </div>
+  <div class="impact-grid">
+    <div class="impact-box">
+      <div class="impact-num">500+</div>
+      <div class="impact-label">Students Served</div>
+      <div class="impact-sub">Across all programs and cohort tracks since founding</div>
+    </div>
+    <div class="impact-box">
+      <div class="impact-num">92%</div>
+      <div class="impact-label">Placement Rate</div>
+      <div class="impact-sub">Post-program employment or higher education within 90 days</div>
+    </div>
+    <div class="impact-box">
+      <div class="impact-num">40+</div>
+      <div class="impact-label">Employer Partners</div>
+      <div class="impact-sub">Companies actively partnering to host fellows and create pipelines</div>
+    </div>
+    <div class="impact-box">
+      <div class="impact-num">$42K</div>
+      <div class="impact-label">Avg. First-Year Salary</div>
+      <div class="impact-sub">Among fellows placed in full-time roles after program completion</div>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURED STORY -->
+<section class="featured-story">
+  <div class="featured-photo">
+    <div class="photo-placeholder dark" style="width:100%;height:100%;min-height:500px;">
+      <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+      Fellow Photo
+    </div>
+    <div class="featured-photo-tag">Fellow Spotlight</div>
+  </div>
+  <div class="featured-content">
+    <div class="section-label">Success Story</div>
+    <h2>From First-Gen Student to Finance Analyst</h2>
+    <blockquote>"CEO didn't just give me a job — it gave me a map. I finally understood how to navigate a career, not just apply for one."</blockquote>
+    <p>Jordan came to CEO as a high school senior with no idea how the financial sector worked or how to position himself for a role in it. Within six months of completing the Employer Fellowship, he was working as a junior analyst at a regional financial firm — earning more than either of his parents.</p>
+    <p>Today, Jordan mentors incoming CEO fellows and speaks at employer partner events about what real access looks like.</p>
+    <div class="fellow-tag">
+      <div class="fellow-avatar">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--grey)" stroke-width="1.5"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+      </div>
+      <div>
+        <div class="fellow-name">Jordan Matthews</div>
+        <div class="fellow-cohort">Employer Fellow — Class of 2024</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="testimonials-section">
+  <div class="section-title-center">
+    <div class="section-label" style="justify-content:center;"><span>Student Voices</span></div>
+    <h2>What Our Fellows Say</h2>
+    <p>Real words from students who found their path through CEO.</p>
+  </div>
+  <div class="testi-grid">
+    <div class="testi-card">
+      <span class="testi-quote">"</span>
+      <p class="testi-text">Before CEO, I didn't know how to talk to an employer or negotiate my value. Now I'm in a full-time finance role at 19. This program is the real deal.</p>
+      <div class="testi-person">
+        <div class="testi-avatar"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--grey)" stroke-width="1.5"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></div>
+        <div>
+          <div class="testi-name">Aaliyah Reeves</div>
+          <div class="testi-role">Employer Fellow, Class of 2023</div>
+        </div>
+      </div>
+    </div>
+    <div class="testi-card">
+      <span class="testi-quote">"</span>
+      <p class="testi-text">The Sector Accelerator showed me that tech wasn't out of reach. I had the skills — I just needed the context. CEO gave me that in a way school never did.</p>
+      <div class="testi-person">
+        <div class="testi-avatar"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--grey)" stroke-width="1.5"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></div>
+        <div>
+          <div class="testi-name">DeShawn Carter</div>
+          <div class="testi-role">Sector Accelerator, Class of 2024</div>
+        </div>
+      </div>
+    </div>
+    <div class="testi-card">
+      <span class="testi-quote">"</span>
+      <p class="testi-text">I learned more about how the economy actually works in six weeks with CEO than in four years of high school. That's not an exaggeration.</p>
+      <div class="testi-person">
+        <div class="testi-avatar"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--grey)" stroke-width="1.5"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></div>
+        <div>
+          <div class="testi-name">Marcus Williams</div>
+          <div class="testi-role">Economic Navigation, Class of 2024</div>
+        </div>
+      </div>
+    </div>
+    <div class="testi-card">
+      <span class="testi-quote">"</span>
+      <p class="testi-text">As a first-generation student, I never knew what I didn't know. CEO's curriculum is designed to fill exactly those invisible gaps — and it works.</p>
+      <div class="testi-person">
+        <div class="testi-avatar"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--grey)" stroke-width="1.5"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></div>
+        <div>
+          <div class="testi-name">Priya Nguyen</div>
+          <div class="testi-role">Employer Fellow, Class of 2023</div>
+        </div>
+      </div>
+    </div>
+    <div class="testi-card">
+      <span class="testi-quote">"</span>
+      <p class="testi-text">I used to think networking was something other people did. Now I understand it's just relationship architecture — and CEO taught me how to build with intention.</p>
+      <div class="testi-person">
+        <div class="testi-avatar"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--grey)" stroke-width="1.5"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></div>
+        <div>
+          <div class="testi-name">Trevon Hughes</div>
+          <div class="testi-role">Economic Navigation, Class of 2024</div>
+        </div>
+      </div>
+    </div>
+    <div class="testi-card">
+      <span class="testi-quote">"</span>
+      <p class="testi-text">CEO didn't just prepare me for a job. It prepared me for the rest of my economic life. That's a different thing — and it matters a lot more.</p>
+      <div class="testi-person">
+        <div class="testi-avatar"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--grey)" stroke-width="1.5"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></div>
+        <div>
+          <div class="testi-name">Simone Jackson</div>
+          <div class="testi-role">Sector Accelerator, Class of 2023</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- OUTCOMES CHART -->
+<section class="outcomes">
+  <div class="section-title-center">
+    <div class="section-label" style="justify-content:center;"><span>Measured Outcomes</span></div>
+    <h2 class="light">What We Track</h2>
+    <p class="light">We hold ourselves accountable to measurable change in students' economic trajectories.</p>
+  </div>
+  <div class="outcomes-bars">
+    <div class="outcome-row">
+      <div class="outcome-label">Post-Program Placement</div>
+      <div class="outcome-bar-track"><div class="outcome-bar-fill" style="width:92%"></div></div>
+      <div class="outcome-pct">92%</div>
+    </div>
+    <div class="outcome-row">
+      <div class="outcome-label">Salary Above Min. Wage</div>
+      <div class="outcome-bar-track"><div class="outcome-bar-fill" style="width:88%"></div></div>
+      <div class="outcome-pct">88%</div>
+    </div>
+    <div class="outcome-row">
+      <div class="outcome-label">Continued Education</div>
+      <div class="outcome-bar-track"><div class="outcome-bar-fill" style="width:74%"></div></div>
+      <div class="outcome-pct">74%</div>
+    </div>
+    <div class="outcome-row">
+      <div class="outcome-label">Alumni Still Engaged (2yr)</div>
+      <div class="outcome-bar-track"><div class="outcome-bar-fill" style="width:81%"></div></div>
+      <div class="outcome-pct">81%</div>
+    </div>
+    <div class="outcome-row">
+      <div class="outcome-label">First-Gen to Professional Role</div>
+      <div class="outcome-bar-track"><div class="outcome-bar-fill" style="width:67%"></div></div>
+      <div class="outcome-pct">67%</div>
+    </div>
+  </div>
+</section>
+
+<!-- GEOGRAPHIC REACH -->
+<section class="geographic">
+  <div class="geo-content">
+    <div class="section-label">Where We Work</div>
+    <h2>Growing Our Reach, City by City</h2>
+    <p>CEO launched in Houston — one of the most economically diverse and opportunity-rich cities in the country — and is expanding strategically to serve students across major metro areas.</p>
+    <div class="geo-cities">
+      <div class="geo-city"><span class="geo-city-name">Houston, TX</span><span class="geo-city-count">Founding City · Active</span></div>
+      <div class="geo-city"><span class="geo-city-name">Dallas, TX</span><span class="geo-city-count">Expanding 2025</span></div>
+      <div class="geo-city"><span class="geo-city-name">Atlanta, GA</span><span class="geo-city-count">Coming 2026</span></div>
+      <div class="geo-city"><span class="geo-city-name">Chicago, IL</span><span class="geo-city-count">Coming 2026</span></div>
+    </div>
+  </div>
+  <div class="geo-map-placeholder">
+    <div class="photo-placeholder" style="width:100%;height:100%;min-height:360px;">
+      <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+      Map Placeholder
+    </div>
+  </div>
+</section>
+
+<!-- CTA BAND -->
+<section class="cta-band">
+  <h2>Be Part of the <em>Next Chapter</em></h2>
+  <div class="cta-buttons">
+    <a href="get-involved.html" class="btn btn-gold">Get Involved</a>
+    <a href="programs.html" class="btn btn-outline-white">View Programs</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-grid">
+    <div>
+      <a href="index.html"><img class="footer-logo" src="assets/logo-white.png" alt="CEO"></a>
+      <p class="footer-tagline">Bridging the gap between exceptional talent and economic opportunity — one cohort at a time.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Organization</h4>
+      <ul>
+        <li><a href="about.html">About CEO</a></li>
+        <li><a href="about.html#team">Our Team</a></li>
+        <li><a href="about.html#board">Board of Directors</a></li>
+        <li><a href="contact.html">Careers</a></li>
+        <li><a href="news.html">Press</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Programs</h4>
+      <ul>
+        <li><a href="programs.html#navigation">Economic Navigation</a></li>
+        <li><a href="programs.html#fellowship">Employer Fellowship</a></li>
+        <li><a href="programs.html#accelerator">Sector Accelerators</a></li>
+        <li><a href="impact.html">Alumni Network</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Get Involved</h4>
+      <ul>
+        <li><a href="get-involved.html#apply">Apply as a Student</a></li>
+        <li><a href="get-involved.html#partner">Become a Partner</a></li>
+        <li><a href="get-involved.html#donate">Donate</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; 2025 Cohort for Economic Opportunity. All rights reserved.</p>
+    <div class="footer-social">
+      <a href="#" class="social-icon">in</a>
+      <a href="#" class="social-icon">tw</a>
+      <a href="#" class="social-icon">ig</a>
+      <a href="#" class="social-icon">fb</a>
+    </div>
+  </div>
+</footer>
+<script src="nav.js"></script>
+</body>
+</html>

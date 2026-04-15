@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>News – Cohort for Economic Opportunity</title>
+<link rel="stylesheet" href="styles.css">
+<style>
+
+  /* ── FEATURED POST ── */
+  .featured-post {
+    background: var(--navy-deep);
+    padding: 80px 120px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+  }
+
+  .fp-photo {
+    width: 100%;
+    aspect-ratio: 16/10;
+  }
+
+  .fp-photo .photo-placeholder { width: 100%; height: 100%; min-height: 280px; }
+
+  .fp-content .fp-cat {
+    display: inline-block;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 700;
+    font-size: 11px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    background: var(--accent);
+    color: var(--navy-deep);
+    padding: 5px 12px;
+    margin-bottom: 20px;
+  }
+
+  .fp-content h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 38px;
+    font-weight: 900;
+    color: var(--white);
+    line-height: 1.15;
+    margin-bottom: 18px;
+  }
+
+  .fp-content p {
+    font-size: 16px;
+    line-height: 1.8;
+    color: rgba(255,255,255,0.6);
+    font-weight: 300;
+    margin-bottom: 28px;
+  }
+
+  .fp-meta {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 12px;
+    letter-spacing: 1px;
+    color: rgba(255,255,255,0.3);
+    margin-bottom: 24px;
+  }
+
+  .fp-meta span { color: var(--accent); }
+
+  /* ── NEWS GRID ── */
+  .news-section {
+    padding: 100px 120px;
+    background: var(--white);
+  }
+
+  .news-filter {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-bottom: 56px;
+  }
+
+  .filter-chip {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 600;
+    font-size: 12px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    padding: 9px 20px;
+    border: 1px solid var(--grey-light);
+    color: var(--grey);
+    background: transparent;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+
+  .filter-chip:hover,
+  .filter-chip.active {
+    background: var(--navy-deep);
+    border-color: var(--navy-deep);
+    color: var(--white);
+  }
+
+  .news-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+  }
+
+  .news-card {
+    display: flex;
+    flex-direction: column;
+    text-decoration: none;
+    transition: transform 0.2s;
+  }
+
+  .news-card:hover { transform: translateY(-4px); }
+
+  .news-card-photo {
+    width: 100%;
+    aspect-ratio: 16/9;
+    margin-bottom: 20px;
+    overflow: hidden;
+    position: relative;
+  }
+
+  .news-card-photo .photo-placeholder { width: 100%; height: 100%; }
+
+  .nc-cat {
+    display: inline-block;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 700;
+    font-size: 10px;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 10px;
+  }
+
+  .nc-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--navy-deep);
+    line-height: 1.3;
+    margin-bottom: 10px;
+  }
+
+  .nc-excerpt {
+    font-size: 14px;
+    line-height: 1.7;
+    color: var(--grey);
+    font-weight: 300;
+    flex: 1;
+    margin-bottom: 16px;
+  }
+
+  .nc-meta {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 11px;
+    letter-spacing: 1px;
+    color: var(--grey-light);
+    padding-top: 16px;
+    border-top: 1px solid var(--grey-light);
+  }
+
+  /* ── PRESS MENTIONS ── */
+  .press {
+    background: var(--grey-pale);
+    padding: 80px 120px;
+  }
+
+  .press-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+    margin-top: 56px;
+  }
+
+  .press-card {
+    background: var(--white);
+    padding: 32px 28px;
+    border-top: 2px solid transparent;
+    transition: border-color 0.2s;
+    text-decoration: none;
+    display: block;
+  }
+
+  .press-card:hover { border-top-color: var(--accent); }
+
+  .press-outlet {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 700;
+    font-size: 13px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--grey);
+    margin-bottom: 14px;
+  }
+
+  .press-headline {
+    font-family: 'Playfair Display', serif;
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--navy-deep);
+    line-height: 1.4;
+    margin-bottom: 12px;
+  }
+
+  .press-date {
+    font-size: 12px;
+    color: var(--grey);
+    font-family: 'Barlow Condensed', sans-serif;
+    letter-spacing: 0.5px;
+  }
+
+  /* ── NEWSLETTER ── */
+  .newsletter {
+    background: var(--navy-deep);
+    padding: 80px 120px;
+    text-align: center;
+  }
+
+  .newsletter h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 40px;
+    font-weight: 900;
+    color: var(--white);
+    margin-bottom: 14px;
+  }
+
+  .newsletter p {
+    font-size: 16px;
+    color: rgba(255,255,255,0.5);
+    margin-bottom: 36px;
+    font-weight: 300;
+  }
+
+  .newsletter-form {
+    display: flex;
+    gap: 0;
+    max-width: 480px;
+    margin: 0 auto;
+  }
+
+  .newsletter-form input {
+    flex: 1;
+    padding: 16px 20px;
+    background: rgba(255,255,255,0.07);
+    border: 1px solid rgba(255,255,255,0.15);
+    border-right: none;
+    font-family: 'Barlow', sans-serif;
+    font-size: 15px;
+    color: var(--white);
+    outline: none;
+  }
+
+  .newsletter-form input::placeholder { color: rgba(255,255,255,0.3); }
+
+  .newsletter-form button {
+    padding: 16px 28px;
+    background: var(--accent);
+    border: none;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 700;
+    font-size: 13px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--navy-deep);
+    cursor: pointer;
+    transition: background 0.2s;
+  }
+
+  .newsletter-form button:hover { background: var(--white); }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html"><img class="logo" src="assets/logo-main.png" alt="Cohort for Economic Opportunity"></a>
+  <ul>
+    <li><a href="about.html">About</a></li>
+    <li><a href="programs.html">Programs</a></li>
+    <li><a href="get-involved.html">Get Involved</a></li>
+    <li><a href="impact.html">Impact</a></li>
+    <li><a href="news.html">News</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+  <a href="get-involved.html" class="nav-cta">Apply Now</a>
+</nav>
+
+<!-- PAGE HEADER -->
+<header class="page-header">
+  <div class="page-header-content">
+    <div class="section-label">Latest Updates</div>
+    <h1>News &<br><em>Stories</em></h1>
+    <p>Updates from CEO, our fellows, our partners, and the broader economic opportunity movement.</p>
+  </div>
+</header>
+
+<!-- FEATURED POST -->
+<section class="featured-post">
+  <div class="fp-photo">
+    <div class="photo-placeholder dark" style="width:100%;height:100%;min-height:280px;">
+      <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+      Featured Image
+    </div>
+  </div>
+  <div class="fp-content">
+    <div class="fp-cat">Featured Story</div>
+    <div class="fp-meta">April 2025 <span>·</span> Announcements</div>
+    <h2>CEO Awarded 501(c)(3) Status and Launches First Houston Cohort</h2>
+    <p>After months of groundwork, the Cohort for Economic Opportunity has officially earned its tax-exempt status and is welcoming its inaugural cohort of fellows from the Houston metro area.</p>
+    <a href="#" class="btn btn-white">Read Full Story</a>
+  </div>
+</section>
+
+<!-- NEWS GRID -->
+<section class="news-section">
+  <div class="news-filter">
+    <button class="filter-chip active">All</button>
+    <button class="filter-chip">Announcements</button>
+    <button class="filter-chip">Fellow Stories</button>
+    <button class="filter-chip">Partner News</button>
+    <button class="filter-chip">Press</button>
+    <button class="filter-chip">Events</button>
+  </div>
+  <div class="news-grid">
+
+    <a href="#" class="news-card">
+      <div class="news-card-photo">
+        <div class="photo-placeholder" style="width:100%;height:100%;min-height:160px;">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+        </div>
+      </div>
+      <div class="nc-cat">Announcements</div>
+      <div class="nc-title">CEO Founder Awarded Zuckerman Fellowship at Harvard Kennedy School</div>
+      <div class="nc-excerpt">The fellowship adds elite institutional credibility and network access to CEO's growing national presence.</div>
+      <div class="nc-meta">March 2025</div>
+    </a>
+
+    <a href="#" class="news-card">
+      <div class="news-card-photo">
+        <div class="photo-placeholder" style="width:100%;height:100%;min-height:160px;">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+        </div>
+      </div>
+      <div class="nc-cat">Fellow Stories</div>
+      <div class="nc-title">From Classroom to Finance Desk: Jordan's CEO Story</div>
+      <div class="nc-excerpt">One year after completing the Employer Fellowship, Jordan reflects on how CEO changed his economic trajectory.</div>
+      <div class="nc-meta">February 2025</div>
+    </a>
+
+    <a href="#" class="news-card">
+      <div class="news-card-photo">
+        <div class="photo-placeholder" style="width:100%;height:100%;min-height:160px;">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+        </div>
+      </div>
+      <div class="nc-cat">Partner News</div>
+      <div class="nc-title">CEO Announces 5 New Employer Partners for Spring Fellowship</div>
+      <div class="nc-excerpt">New partners in finance, technology, and healthcare expand available fellowship placements for the Spring 2025 cohort.</div>
+      <div class="nc-meta">January 2025</div>
+    </a>
+
+    <a href="#" class="news-card">
+      <div class="news-card-photo">
+        <div class="photo-placeholder" style="width:100%;height:100%;min-height:160px;">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+        </div>
+      </div>
+      <div class="nc-cat">Events</div>
+      <div class="nc-title">CEO Presents at the National Workforce Development Summit</div>
+      <div class="nc-excerpt">Our founder joined a panel of nonprofit leaders discussing structural approaches to closing the economic opportunity gap.</div>
+      <div class="nc-meta">December 2024</div>
+    </a>
+
+    <a href="#" class="news-card">
+      <div class="news-card-photo">
+        <div class="photo-placeholder" style="width:100%;height:100%;min-height:160px;">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+        </div>
+      </div>
+      <div class="nc-cat">Fellow Stories</div>
+      <div class="nc-title">DeShawn Lands a Tech Role After the Sector Accelerator</div>
+      <div class="nc-excerpt">He had the skills. CEO gave him the context to deploy them. Now he's shipping code for a Houston-based startup.</div>
+      <div class="nc-meta">November 2024</div>
+    </a>
+
+    <a href="#" class="news-card">
+      <div class="news-card-photo">
+        <div class="photo-placeholder" style="width:100%;height:100%;min-height:160px;">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+        </div>
+      </div>
+      <div class="nc-cat">Announcements</div>
+      <div class="nc-title">Introducing the EdTech Layer: CEO Builds a Digital Platform</div>
+      <div class="nc-excerpt">CEO is developing a proprietary digital platform to house curriculum, student data, and economic navigation tools.</div>
+      <div class="nc-meta">October 2024</div>
+    </a>
+
+  </div>
+</section>
+
+<!-- PRESS -->
+<section class="press">
+  <div class="section-title-center">
+    <div class="section-label" style="justify-content:center;"><span>In the Press</span></div>
+    <h2>Media Coverage</h2>
+  </div>
+  <div class="press-grid">
+    <a href="#" class="press-card">
+      <div class="press-outlet">Houston Chronicle</div>
+      <div class="press-headline">"New Nonprofit Aims to Be the Architecture of Economic Access for Houston Youth"</div>
+      <div class="press-date">March 2025</div>
+    </a>
+    <a href="#" class="press-card">
+      <div class="press-outlet">EdSurge</div>
+      <div class="press-headline">"Moving Beyond Mentoring: CEO's Systems Approach to Workforce Equity"</div>
+      <div class="press-date">February 2025</div>
+    </a>
+    <a href="#" class="press-card">
+      <div class="press-outlet">Forbes</div>
+      <div class="press-headline">"The Nonprofits Rethinking How We Build Pipelines for Underrepresented Talent"</div>
+      <div class="press-date">January 2025</div>
+    </a>
+    <a href="#" class="press-card">
+      <div class="press-outlet">Chalkbeat</div>
+      <div class="press-headline">"CEO Is Teaching Students the Economics Their Schools Don't"</div>
+      <div class="press-date">November 2024</div>
+    </a>
+  </div>
+</section>
+
+<!-- NEWSLETTER -->
+<section class="newsletter">
+  <h2>Stay in the Loop</h2>
+  <p>Get CEO updates, fellow spotlights, and economic opportunity news delivered to your inbox.</p>
+  <div class="newsletter-form">
+    <input type="email" placeholder="Enter your email address">
+    <button>Subscribe</button>
+  </div>
+</section>
+
+<!-- CTA BAND -->
+<section class="cta-band">
+  <h2>Ready to Write Your Own <em>Story?</em></h2>
+  <div class="cta-buttons">
+    <a href="get-involved.html" class="btn btn-gold">Get Involved</a>
+    <a href="programs.html" class="btn btn-outline-white">View Programs</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-grid">
+    <div>
+      <a href="index.html"><img class="footer-logo" src="assets/logo-white.png" alt="CEO"></a>
+      <p class="footer-tagline">Bridging the gap between exceptional talent and economic opportunity — one cohort at a time.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Organization</h4>
+      <ul>
+        <li><a href="about.html">About CEO</a></li>
+        <li><a href="about.html#team">Our Team</a></li>
+        <li><a href="about.html#board">Board of Directors</a></li>
+        <li><a href="contact.html">Careers</a></li>
+        <li><a href="news.html">Press</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Programs</h4>
+      <ul>
+        <li><a href="programs.html#navigation">Economic Navigation</a></li>
+        <li><a href="programs.html#fellowship">Employer Fellowship</a></li>
+        <li><a href="programs.html#accelerator">Sector Accelerators</a></li>
+        <li><a href="impact.html">Alumni Network</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Get Involved</h4>
+      <ul>
+        <li><a href="get-involved.html#apply">Apply as a Student</a></li>
+        <li><a href="get-involved.html#partner">Become a Partner</a></li>
+        <li><a href="get-involved.html#donate">Donate</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; 2025 Cohort for Economic Opportunity. All rights reserved.</p>
+    <div class="footer-social">
+      <a href="#" class="social-icon">in</a>
+      <a href="#" class="social-icon">tw</a>
+      <a href="#" class="social-icon">ig</a>
+      <a href="#" class="social-icon">fb</a>
+    </div>
+  </div>
+</footer>
+
+<script src="nav.js"></script>
+<script>
+  document.querySelectorAll('.filter-chip').forEach(chip => {
+    chip.addEventListener('click', function() {
+      document.querySelectorAll('.filter-chip').forEach(c => c.classList.remove('active'));
+      this.classList.add('active');
+    });
+  });
+</script>
+</body>
+</html>

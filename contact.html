@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact – Cohort for Economic Opportunity</title>
+<link rel="stylesheet" href="styles.css">
+<style>
+
+  /* ── CONTACT LAYOUT ── */
+  .contact-body {
+    padding: 100px 120px;
+    display: grid;
+    grid-template-columns: 1fr 1.4fr;
+    gap: 80px;
+    align-items: start;
+    background: var(--white);
+  }
+
+  /* ── LEFT SIDE ── */
+  .contact-info h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 44px;
+    font-weight: 900;
+    color: var(--navy-deep);
+    line-height: 1.1;
+    margin-bottom: 20px;
+  }
+
+  .contact-info h2 em { font-style: italic; color: var(--accent); }
+
+  .contact-info > p {
+    font-size: 16px;
+    line-height: 1.85;
+    color: #4a5568;
+    font-weight: 300;
+    margin-bottom: 44px;
+  }
+
+  .contact-details {
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+    margin-bottom: 44px;
+  }
+
+  .contact-detail {
+    display: flex;
+    gap: 18px;
+    align-items: flex-start;
+  }
+
+  .cd-icon {
+    width: 44px;
+    height: 44px;
+    background: var(--grey-pale);
+    border: 1px solid var(--grey-light);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .cd-label {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 700;
+    font-size: 11px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--grey);
+    margin-bottom: 4px;
+  }
+
+  .cd-value {
+    font-size: 15px;
+    color: var(--navy-deep);
+    font-weight: 400;
+    line-height: 1.5;
+    text-decoration: none;
+  }
+
+  .cd-value:hover { color: var(--accent); }
+
+  /* ── SOCIAL ROW ── */
+  .contact-socials {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-bottom: 44px;
+  }
+
+  .social-pill {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 18px;
+    border: 1px solid var(--grey-light);
+    text-decoration: none;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: var(--navy);
+    transition: all 0.2s;
+  }
+
+  .social-pill:hover { background: var(--navy-deep); color: var(--white); border-color: var(--navy-deep); }
+
+  /* ── INQUIRY TYPES ── */
+  .inquiry-types {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 0;
+  }
+
+  .inquiry-type {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 16px 20px;
+    background: var(--grey-pale);
+    border-left: 3px solid transparent;
+    text-decoration: none;
+    transition: all 0.2s;
+    cursor: pointer;
+  }
+
+  .inquiry-type:hover { border-left-color: var(--accent); background: var(--grey-light); }
+
+  .it-icon {
+    width: 36px;
+    height: 36px;
+    background: var(--navy-deep);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .it-label {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 700;
+    font-size: 14px;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    color: var(--navy-deep);
+  }
+
+  .it-desc {
+    font-size: 12px;
+    color: var(--grey);
+    margin-top: 2px;
+  }
+
+  /* ── FORM SIDE ── */
+  .contact-form-wrap {
+    background: var(--navy-deep);
+    padding: 56px 52px;
+  }
+
+  .contact-form-wrap h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 28px;
+    font-weight: 900;
+    color: var(--white);
+    margin-bottom: 8px;
+  }
+
+  .contact-form-wrap > p {
+    font-size: 14px;
+    color: rgba(255,255,255,0.4);
+    margin-bottom: 36px;
+    line-height: 1.6;
+  }
+
+  .cf-label {
+    display: block;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.4);
+    margin-bottom: 8px;
+  }
+
+  .cf-input,
+  .cf-select,
+  .cf-textarea {
+    width: 100%;
+    padding: 14px 16px;
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.1);
+    font-family: 'Barlow', sans-serif;
+    font-size: 15px;
+    color: var(--white);
+    outline: none;
+    margin-bottom: 20px;
+    transition: border-color 0.2s;
+    appearance: none;
+  }
+
+  .cf-input:focus,
+  .cf-select:focus,
+  .cf-textarea:focus { border-color: var(--accent); }
+
+  .cf-input::placeholder,
+  .cf-textarea::placeholder { color: rgba(255,255,255,0.2); }
+
+  .cf-select option { background: var(--navy-deep); }
+
+  .cf-textarea { resize: vertical; min-height: 120px; }
+
+  .cf-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+
+  .cf-submit {
+    width: 100%;
+    padding: 18px;
+    background: var(--accent);
+    border: none;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 700;
+    font-size: 14px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--navy-deep);
+    cursor: pointer;
+    transition: background 0.2s;
+    margin-top: 4px;
+  }
+
+  .cf-submit:hover { background: var(--white); }
+
+  /* ── MAP / LOCATION BAND ── */
+  .location-band {
+    background: var(--grey-pale);
+    padding: 80px 120px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+  }
+
+  .location-content h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 38px;
+    font-weight: 900;
+    color: var(--navy-deep);
+    margin-bottom: 16px;
+  }
+
+  .location-content p {
+    font-size: 15px;
+    line-height: 1.8;
+    color: #4a5568;
+    font-weight: 300;
+    margin-bottom: 12px;
+  }
+
+  .location-address {
+    margin-top: 28px;
+    padding: 24px;
+    background: var(--white);
+    border-left: 3px solid var(--accent);
+    font-size: 15px;
+    line-height: 1.8;
+    color: var(--navy-deep);
+  }
+
+  .location-map .photo-placeholder { width: 100%; height: 380px; }
+
+  /* ── FAQ ── */
+  .faq {
+    background: var(--white);
+    padding: 100px 120px;
+  }
+
+  .faq-list {
+    margin-top: 64px;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .faq-item {
+    border-bottom: 1px solid var(--grey-light);
+  }
+
+  .faq-question {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 24px 0;
+    cursor: pointer;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 700;
+    font-size: 17px;
+    letter-spacing: 0.3px;
+    text-transform: uppercase;
+    color: var(--navy-deep);
+  }
+
+  .faq-question:hover { color: var(--accent); }
+
+  .faq-icon {
+    width: 24px;
+    height: 24px;
+    flex-shrink: 0;
+    transition: transform 0.2s;
+  }
+
+  .faq-item.open .faq-icon { transform: rotate(45deg); }
+
+  .faq-answer {
+    display: none;
+    padding: 0 0 24px;
+    font-size: 15px;
+    line-height: 1.8;
+    color: #4a5568;
+    font-weight: 300;
+    max-width: 640px;
+  }
+
+  .faq-item.open .faq-answer { display: block; }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html"><img class="logo" src="assets/logo-main.png" alt="Cohort for Economic Opportunity"></a>
+  <ul>
+    <li><a href="about.html">About</a></li>
+    <li><a href="programs.html">Programs</a></li>
+    <li><a href="get-involved.html">Get Involved</a></li>
+    <li><a href="impact.html">Impact</a></li>
+    <li><a href="news.html">News</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+  <a href="get-involved.html" class="nav-cta">Apply Now</a>
+</nav>
+
+<!-- PAGE HEADER -->
+<header class="page-header">
+  <div class="page-header-content">
+    <div class="section-label">Reach Out</div>
+    <h1>Let's Start a<br><em>Conversation</em></h1>
+    <p>Whether you're a student, employer, funder, or partner — we want to hear from you.</p>
+  </div>
+</header>
+
+<!-- CONTACT BODY -->
+<section class="contact-body">
+
+  <!-- LEFT -->
+  <div class="contact-info">
+    <div class="section-label">Contact CEO</div>
+    <h2>We're <em>Here</em> for You</h2>
+    <p>Reach out directly or use the form and our team will respond within 2 business days.</p>
+
+    <div class="contact-details">
+      <div class="contact-detail">
+        <div class="cd-icon">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--navy)" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        </div>
+        <div>
+          <div class="cd-label">Email</div>
+          <a href="mailto:hello@cohortforeo.org" class="cd-value">hello@cohortforeo.org</a>
+        </div>
+      </div>
+      <div class="contact-detail">
+        <div class="cd-icon">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--navy)" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        </div>
+        <div>
+          <div class="cd-label">Phone</div>
+          <a href="tel:+17135550100" class="cd-value">(713) 555-0100</a>
+        </div>
+      </div>
+      <div class="contact-detail">
+        <div class="cd-icon">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--navy)" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        </div>
+        <div>
+          <div class="cd-label">Location</div>
+          <span class="cd-value">Houston, TX (Serving the Greater Metro Area)</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="contact-socials">
+      <a href="#" class="social-pill">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+        LinkedIn
+      </a>
+      <a href="#" class="social-pill">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"/></svg>
+        Twitter
+      </a>
+      <a href="#" class="social-pill">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+        Instagram
+      </a>
+    </div>
+
+    <div class="section-label" style="margin-bottom:16px;">What are you reaching out about?</div>
+    <div class="inquiry-types">
+      <div class="inquiry-type">
+        <div class="it-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg></div>
+        <div><div class="it-label">Student / Applicant</div><div class="it-desc">Questions about applying or program details</div></div>
+      </div>
+      <div class="inquiry-type">
+        <div class="it-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg></div>
+        <div><div class="it-label">Employer / Partner</div><div class="it-desc">Interested in hosting fellows or sponsoring</div></div>
+      </div>
+      <div class="inquiry-type">
+        <div class="it-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="16"/><line x1="8" y1="12" x2="16" y2="12"/></svg></div>
+        <div><div class="it-label">Funder / Donor</div><div class="it-desc">Questions about giving or foundation partnerships</div></div>
+      </div>
+      <div class="inquiry-type">
+        <div class="it-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2"><path d="M14.5 10c-.83 0-1.5-.67-1.5-1.5v-5c0-.83.67-1.5 1.5-1.5s1.5.67 1.5 1.5v5c0 .83-.67 1.5-1.5 1.5z"/><path d="M20.5 10H19V8.5c0-.83.67-1.5 1.5-1.5s1.5.67 1.5 1.5-.67 1.5-1.5 1.5z"/><path d="M9.5 14c.83 0 1.5.67 1.5 1.5v5c0 .83-.67 1.5-1.5 1.5S8 21.33 8 20.5v-5c0-.83.67-1.5 1.5-1.5z"/><path d="M3.5 14H5v1.5c0 .83-.67 1.5-1.5 1.5S2 16.33 2 15.5 2.67 14 3.5 14z"/><path d="M14 14.5c0-.83.67-1.5 1.5-1.5h5c.83 0 1.5.67 1.5 1.5s-.67 1.5-1.5 1.5h-5c-.83 0-1.5-.67-1.5-1.5z"/><path d="M15.5 19H14v1.5c0 .83.67 1.5 1.5 1.5s1.5-.67 1.5-1.5-.67-1.5-1.5-1.5z"/><path d="M10 9.5C10 8.67 9.33 8 8.5 8h-5C2.67 8 2 8.67 2 9.5S2.67 11 3.5 11h5c.83 0 1.5-.67 1.5-1.5z"/><path d="M8.5 5H10V3.5C10 2.67 9.33 2 8.5 2S7 2.67 7 3.5 7.67 5 8.5 5z"/></svg></div>
+        <div><div class="it-label">Press / Media</div><div class="it-desc">Media inquiries, interview requests, or press access</div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- RIGHT: FORM -->
+  <div class="contact-form-wrap">
+    <h3>Send Us a Message</h3>
+    <p>Fill out the form and we'll get back to you within 2 business days.</p>
+
+    <div class="cf-row">
+      <div><label class="cf-label">First Name</label><input type="text" class="cf-input" placeholder="First"></div>
+      <div><label class="cf-label">Last Name</label><input type="text" class="cf-input" placeholder="Last"></div>
+    </div>
+    <label class="cf-label">Email Address</label>
+    <input type="email" class="cf-input" placeholder="you@email.com">
+    <label class="cf-label">Organization (if applicable)</label>
+    <input type="text" class="cf-input" placeholder="Company, school, or org">
+    <label class="cf-label">Reason for Contact</label>
+    <select class="cf-select">
+      <option value="">Select a reason</option>
+      <option>Student / Program Inquiry</option>
+      <option>Employer / Partner Inquiry</option>
+      <option>Donation / Funding</option>
+      <option>Media / Press</option>
+      <option>General Question</option>
+      <option>Other</option>
+    </select>
+    <label class="cf-label">Message</label>
+    <textarea class="cf-textarea" placeholder="Tell us how we can help..."></textarea>
+    <button class="cf-submit">Send Message</button>
+  </div>
+</section>
+
+<!-- LOCATION -->
+<section class="location-band">
+  <div class="location-content">
+    <div class="section-label">Where We Are</div>
+    <h2>Based in Houston, TX</h2>
+    <p>CEO is headquartered in Houston — one of the most economically and culturally diverse cities in the nation, and the ideal launchpad for a national economic opportunity movement.</p>
+    <p>We work across the Greater Houston Metro Area with plans to expand to additional cities beginning in 2025.</p>
+    <div class="location-address">
+      Cohort for Economic Opportunity<br>
+      Houston, TX 77002<br>
+      hello@cohortforeo.org
+    </div>
+  </div>
+  <div class="location-map">
+    <div class="photo-placeholder" style="width:100%;height:380px;">
+      <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><circle cx="12" cy="12" r="10"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/><line x1="2" y1="12" x2="22" y2="12"/></svg>
+      Map Placeholder
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq">
+  <div class="section-title-center">
+    <div class="section-label" style="justify-content:center;"><span>Common Questions</span></div>
+    <h2>Frequently Asked Questions</h2>
+  </div>
+  <div class="faq-list">
+    <div class="faq-item">
+      <div class="faq-question" onclick="toggleFaq(this)">
+        Are CEO programs free for students?
+        <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+      </div>
+      <div class="faq-answer">Yes. All CEO programs — including Economic Navigation, Employer Fellowships, and Sector Accelerators — are completely free to student participants. Our operating costs are covered by employer partners, funders, and donors.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-question" onclick="toggleFaq(this)">
+        What grades or ages are eligible?
+        <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+      </div>
+      <div class="faq-answer">Our primary focus is high school students (9th–12th grade) and recent graduates. Some sector accelerator tracks accept students up to age 22. First-generation college students and young professionals new to the workforce are also welcome to inquire.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-question" onclick="toggleFaq(this)">
+        Do I need a certain GPA to apply?
+        <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+      </div>
+      <div class="faq-answer">No minimum GPA is required. We select students based on drive, clarity of purpose, and economic need — not academic metrics alone. We believe potential is a far stronger indicator of success than past performance in under-resourced environments.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-question" onclick="toggleFaq(this)">
+        How can my company become an employer partner?
+        <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+      </div>
+      <div class="faq-answer">Reach out via the contact form or email us directly at hello@cohortforeo.org. Employer partnerships range from hosting fellows for a semester to sponsoring a full sector accelerator cohort. We'll match your capacity and goals with the right partnership tier.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-question" onclick="toggleFaq(this)">
+        Is CEO a registered 501(c)(3)?
+        <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+      </div>
+      <div class="faq-answer">Yes. The Cohort for Economic Opportunity is a registered 501(c)(3) nonprofit organization. All donations are fully tax-deductible to the extent permitted by law. We are happy to provide documentation upon request.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-question" onclick="toggleFaq(this)">
+        When does the next cohort begin?
+        <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+      </div>
+      <div class="faq-answer">The Spring 2025 Employer Fellowship cohort is currently accepting applications on a rolling basis. Economic Navigation runs in multiple short cycles throughout the year. Sector Accelerators launch in Summer 2025. Check the Programs page for current application status.</div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA BAND -->
+<section class="cta-band">
+  <h2>Still Have <em>Questions?</em><br>We'd Love to Talk.</h2>
+  <div class="cta-buttons">
+    <a href="mailto:hello@cohortforeo.org" class="btn btn-gold">Email Us Directly</a>
+    <a href="get-involved.html" class="btn btn-outline-white">Get Involved</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-grid">
+    <div>
+      <a href="index.html"><img class="footer-logo" src="assets/logo-white.png" alt="CEO"></a>
+      <p class="footer-tagline">Bridging the gap between exceptional talent and economic opportunity — one cohort at a time.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Organization</h4>
+      <ul>
+        <li><a href="about.html">About CEO</a></li>
+        <li><a href="about.html#team">Our Team</a></li>
+        <li><a href="about.html#board">Board of Directors</a></li>
+        <li><a href="contact.html">Careers</a></li>
+        <li><a href="news.html">Press</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Programs</h4>
+      <ul>
+        <li><a href="programs.html#navigation">Economic Navigation</a></li>
+        <li><a href="programs.html#fellowship">Employer Fellowship</a></li>
+        <li><a href="programs.html#accelerator">Sector Accelerators</a></li>
+        <li><a href="impact.html">Alumni Network</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Get Involved</h4>
+      <ul>
+        <li><a href="get-involved.html#apply">Apply as a Student</a></li>
+        <li><a href="get-involved.html#partner">Become a Partner</a></li>
+        <li><a href="get-involved.html#donate">Donate</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; 2025 Cohort for Economic Opportunity. All rights reserved.</p>
+    <div class="footer-social">
+      <a href="#" class="social-icon">in</a>
+      <a href="#" class="social-icon">tw</a>
+      <a href="#" class="social-icon">ig</a>
+      <a href="#" class="social-icon">fb</a>
+    </div>
+  </div>
+</footer>
+
+<script src="nav.js"></script>
+<script>
+  function toggleFaq(el) {
+    const item = el.parentElement;
+    item.classList.toggle('open');
+  }
+</script>
+</body>
+</html>
