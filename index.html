@@ -3,18 +3,20 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Cohort for Economic Opportunity – CEO</title>
+<title>Cohort for Economic Opportunity – CEO
+</title>
 <link rel="stylesheet" href="styles.css">
 <style>
   /* ── HERO ── */
-  .hero {
-    min-height: 100vh;
-    background: var(--navy-deep);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-    overflow: hidden;
+ .hero {
+  min-height: 100vh;
+  background: var(--navy-deep);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  padding-top: 90px;
   }
 
   .hero-bg {
@@ -182,25 +184,27 @@
 
   .pathways-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(4, 1fr);
     gap: 2px;
     background: var(--grey-light);
     margin-top: 72px;
   }
 
   .pathway-card {
-    background: var(--white);
-    padding: 48px 36px;
-    transition: background 0.3s;
-    cursor: pointer;
-    text-decoration: none;
-    display: block;
-  }
+  background: var(--white);
+  padding: 56px 40px 60px;
+  transition: background 0.3s ease, transform 0.3s ease;
+  cursor: pointer;
+  text-decoration: none;
+  display: block;
+  min-height: 380px;
+}
 
-  .pathway-card:hover { background: var(--navy-deep); }
-  .pathway-card:hover .pc-num { color: rgba(255,255,255,0.07); }
-  .pathway-card:hover .pc-icon { border-color: var(--accent); background: var(--accent); }
-  .pathway-card:hover .pc-icon svg { stroke: var(--navy-deep); }
+  .pathway-card:hover {
+  background: var(--navy-deep);
+  transform: translateY(-4px);}.pathway-card:hover .pc-num { color: rgba(255,255,255,0.07); }
+  .pathway-card:hover .pc- { border-color: var(--accent); background: var(--accent); }
+  .pathway-card:hover .pc- svg { stroke: var(--navy-deep); }
   .pathway-card:hover .pc-title { color: var(--white); }
   .pathway-card:hover .pc-body { color: rgba(255,255,255,0.55); }
 
@@ -214,17 +218,18 @@
     transition: color 0.3s;
   }
 
-  .pc-icon {
-    width: 48px;
-    height: 48px;
-    border: 2px solid var(--navy);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 20px;
-    transition: all 0.3s;
-  }
-
+  .pc- {
+  width: 56px;
+  height: 56px;
+  border: 1.5px solid rgba(11, 31, 59, 0.18);
+  background: rgba(11, 31, 59, 0.03);
+  color: var(--navy-deep);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 22px;
+  transition: all 0.3s ease;
+}
   .pc-title {
     font-family: 'Barlow Condensed', sans-serif;
     font-weight: 700;
@@ -384,7 +389,7 @@
   <a href="programs.html">Programs</a>
   <a href="get-involved.html">Get Involved</a>
   <a href="impact.html">Impact</a>
-  <a href="news.html">News</a>
+  <a href="news.html">Data</a>
   <a href="contact.html">Contact</a>
   <a href="get-involved.html" class="drawer-cta">Apply Now</a>
 </div>
@@ -397,7 +402,7 @@
     <li><a href="programs.html">Programs</a></li>
     <li><a href="get-involved.html">Get Involved</a></li>
     <li><a href="impact.html">Impact</a></li>
-    <li><a href="news.html">News</a></li>
+    <li><a href="news.html">Data</a></li>
     <li><a href="contact.html">Contact</a></li>
   </ul>
   <a href="get-involved.html" class="nav-cta">Apply Now</a>
@@ -409,10 +414,9 @@
 <!-- HERO -->
 <section class="hero">
   <div class="hero-bg"></div>
-  <div class="hero-photo-placeholder">
-    <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
-    Hero Photo
-  </div>
+  <div class="hero-photo">
+  <img src="assets/Picture23.jpg" alt="CEO students engaged in leadership and learning">
+</div>
   <div class="hero-content">
     <div class="hero-eyebrow">Building Economic Architects</div>
     <h1>Where <em>Talent</em><br>Meets<br>Opportunity</h1>
@@ -430,10 +434,10 @@
 
 <!-- STATS BAND -->
 <div class="stats-band cols-4">
-  <div class="stat-item"><div class="stat-number">500+</div><div class="stat-label">Students Served</div></div>
-  <div class="stat-item"><div class="stat-number">40+</div><div class="stat-label">Employer Partners</div></div>
-  <div class="stat-item"><div class="stat-number">92%</div><div class="stat-label">Post-Program Placement</div></div>
-  <div class="stat-item"><div class="stat-number">12</div><div class="stat-label">Cities &amp; Growing</div></div>
+  <div class="stat-item"><div class="stat-number">25</div><div class="stat-label">Pre Pilot Participants</div></div>
+  <div class="stat-item"><div class="stat-number">4</div><div class="stat-label">Areas of focus</div></div>
+  <div class="stat-item"><div class="stat-number">20+</div><div class="stat-label">Hours of Student Engagement</div></div>
+  <div class="stat-item"><div class="stat-number">1</div><div class="stat-label">Region &amp; Growing</div></div>
 </div>
 
 <!-- MISSION -->
@@ -441,14 +445,13 @@
   <div class="mission-text">
     <div class="section-label">Our Mission</div>
     <h2>Closing the Opportunity Gap, One Cohort at a Time</h2>
-    <p>CEO exists to give talented students — especially those who have been systematically overlooked — the economic navigation capital they need to move with intention through high-value career pathways.</p>
+    <p>CEO exists to give talented students — especially those who have been systematically overlooked the economic navigation capital they need to move with intention through high value career pathways with consideration of AI disruption.</p>
     <p>We don't just mentor. We architect opportunity.</p>
     <a href="about.html" class="btn btn-outline-white" style="margin-top:28px;">Our Full Story</a>
   </div>
-  <div class="mission-video-placeholder">
-    <div class="play-btn">
-      <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg>
-    </div>
+  <div class="hero-photo">
+  <img src="assets/Picture24.jpg" alt="CEO students engaged in leadership and learning">
+</div>
     Watch Our Story
   </div>
 </section>
@@ -457,34 +460,57 @@
 <section class="pathways">
   <div class="section-title-center">
     <div class="section-label" style="justify-content:center;"><span>What We Do</span></div>
-    <h2>Our Three Pathways</h2>
-    <p>Three interconnected tracks designed to move students from awareness to action to economic agency.</p>
+    <h2>Our 4 Areas of Focus</h2>
+    <p>Four interconnected tracks designed to move students from awareness to action and economic agency.</p>
   </div>
   <div class="pathways-grid">
     <a href="programs.html#navigation" class="pathway-card">
-      <div class="pc-num">01</div>
-      <div class="pc-icon">
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
-      </div>
-      <div class="pc-title">Economic Navigation</div>
-      <div class="pc-body">Teaching students how labor markets work, where high-value opportunities exist, and how to move with intention through career pathways.</div>
-    </a>
-    <a href="programs.html#fellowship" class="pathway-card">
-      <div class="pc-num">02</div>
-      <div class="pc-icon">
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
-      </div>
-      <div class="pc-title">Employer Fellowship</div>
-      <div class="pc-body">Structured cohort fellowships that place students directly inside partner companies with real work, coaching, and economic literacy woven throughout.</div>
-    </a>
-    <a href="programs.html#accelerator" class="pathway-card">
-      <div class="pc-num">03</div>
-      <div class="pc-icon">
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
-      </div>
-      <div class="pc-title">Sector Accelerators</div>
-      <div class="pc-body">Deep-dive programs in finance, technology, healthcare, and skilled trades — giving students concentrated exposure to the highest-return pathways.</div>
-    </a>
+  <div class="pc-num">01</div>
+  <div class="pc-">
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <circle cx="12" cy="7" r="4"></circle>
+      <path d="M5.5 21a6.5 6.5 0 0 1 13 0"></path>
+    </svg>
+  </div>
+  <div class="pc-title">Leadership</div>
+  <div class="pc-body">Developing students who can communicate clearly, think critically, and lead with purpose in classrooms, workplaces, and communities.</div>
+</a>
+
+<a href="programs.html#fellowship" class="pathway-card">
+  <div class="pc-num">02</div>
+  <div class="pc-">
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <rect x="3" y="7" width="18" height="13" rx="2"></rect>
+      <path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path>
+    </svg>
+  </div>
+  <div class="pc-title">Workforce Readiness</div>
+  <div class="pc-body">Equipping students with the professional habits, practical skills, and strategic awareness needed to navigate modern workforce expectations.</div>
+</a>
+
+<a href="programs.html#accelerator" class="pathway-card">
+  <div class="pc-num">03</div>
+  <div class="pc-">
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M9 18h6"></path>
+      <path d="M10 22h4"></path>
+      <path d="M12 2a7 7 0 0 0-4 12c1 1 1 2 1 4h6c0-2 0-3 1-4a7 7 0 0 0-4-12z"></path>
+    </svg>
+  </div>
+  <div class="pc-title">Entrepreneurship</div>
+  <div class="pc-body">Encouraging initiative, innovation, and opportunity creation through entrepreneurial thinking and applied problem solving.</div>
+</a>
+
+<a href="programs.html#accelerator" class="pathway-card">
+  <div class="pc-num">04</div>
+  <div class="pc-">
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M12 21s-7-4.35-9-8.5C1 8 3.5 5 7 5c2 0 3 1 5 3c2-2 3-3 5-3c3.5 0 6 3 4 7.5C19 16.65 12 21 12 21z"></path>
+    </svg>
+  </div>
+  <div class="pc-title">SEL</div>
+  <div class="pc-body">Strengthening the internal competencies of social emotional learning that support resilience, sound judgment, collaboration, and long-term personal growth.</div>
+</a>
   </div>
 </section>
 
@@ -496,15 +522,22 @@
     <p>CEO was born out of years of watching talented students fall through the cracks — not because they lacked ability, but because no one showed them the architecture of opportunity. We're changing that.</p>
     <a href="about.html" class="btn btn-navy" style="margin-top:28px;">Read Our Story</a>
   </div>
-  <div class="statement-photo">
-    <div class="photo-placeholder dark" style="width:100%;height:100%;min-height:400px;">
-      <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
-      Photo Placeholder
-    </div>
+  <div class="hero-photo">
+  <img src="assets/Picture8.jpg" alt="CEO students engaged in leadership and learning">
+</div>
   </div>
 </section>
 
-<!-- TESTIMONIALS -->
+<!--
+TESTIMONIALS OFF FOR CURRENT LAUNCH 
+
+To restore this section:
+- Delete this opening comment marker
+- Delete the closing comment marker after </section>
+
+Section intentionally preserved for future activation.
+-->
+<!-- 
 <section class="testimonials">
   <div class="section-title-center">
     <div class="section-label" style="justify-content:center;"><span>Student Voices</span></div>
@@ -540,6 +573,7 @@
     <a href="impact.html" class="btn btn-outline-white">View All Stories</a>
   </div>
 </section>
+-->
 
 <!-- CTA BAND -->
 <section class="cta-band">
@@ -564,16 +598,16 @@
         <li><a href="about.html#team">Our Team</a></li>
         <li><a href="about.html#board">Board of Directors</a></li>
         <li><a href="contact.html">Careers</a></li>
-        <li><a href="news.html">Press</a></li>
+        <li><a href="news.html">Data</a></li>
       </ul>
     </div>
     <div class="footer-col">
       <h4>Programs</h4>
       <ul>
-        <li><a href="programs.html#navigation">Economic Navigation</a></li>
-        <li><a href="programs.html#fellowship">Employer Fellowship</a></li>
-        <li><a href="programs.html#accelerator">Sector Accelerators</a></li>
-        <li><a href="impact.html">Alumni Network</a></li>
+        <li><a href="programs.html#navigation">Leadership</a></li>
+        <li><a href="programs.html#fellowship">Workforce Readiness</a></li>
+        <li><a href="programs.html#accelerator">Entrepreneurship</a></li>
+        <li><a href="impact.html">Social Emotional Learning</a></li>
       </ul>
     </div>
     <div class="footer-col">
@@ -587,13 +621,29 @@
     </div>
   </div>
   <div class="footer-bottom">
-    <p>&copy; 2025 Cohort for Economic Opportunity. All rights reserved.</p>
+    <p>&copy; 2026 Cohort for Economic Opportunity. All rights reserved.</p>
     <div class="footer-social">
-      <a href="#" class="social-icon">in</a>
-      <a href="#" class="social-icon">tw</a>
-      <a href="#" class="social-icon">ig</a>
-      <a href="#" class="social-icon">fb</a>
-    </div>
+  <a href="https://www.linkedin.com/in/marquesgmoore/" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="LinkedIn">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-13h4v2"/>
+      <rect x="2" y="9" width="4" height="12"/>
+      <circle cx="4" cy="4" r="2"/>
+    </svg>
+  </a>
+
+  <a href="https://www.youtube.com/@YOURCHANNEL" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="YouTube">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <rect x="2" y="5" width="20" height="14" rx="3"></rect>
+      <polygon points="10 9 16 12 10 15 10 9"></polygon>
+    </svg>
+  </a>
+
+  <a href="https://www.facebook.com/YOURPAGE" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="Facebook">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
+    </svg>
+  </a>
+</div>
   </div>
 </footer>
 <script src="nav.js"></script>

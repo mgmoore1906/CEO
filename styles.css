@@ -561,3 +561,102 @@ footer img.footer-logo { height: 64px; margin-bottom: 20px; opacity: 0.9; }
   .footer-col ul li a    { font-size: 13px; }
   .footer-bottom p       { font-size: 11px; }
 }
+.pc-title {
+  min-height: 52px;
+}
+.pathway-card {
+  background: var(--white);
+  padding: 56px 40px 60px;
+  transition: background 0.3s ease, transform 0.3s ease;
+  cursor: pointer;
+  text-decoration: none;
+  display: block;
+  min-height: 380px;
+}
+
+.pathway-card:hover {
+  background: var(--navy-deep);
+  transform: translateY(-4px);
+}
+
+.pathway-card:hover .pc-num { color: rgba(255,255,255,0.07); }
+.pathway-card:hover .pc- {
+  border-color: rgba(201, 162, 39, 0.45);
+  background: var(--accent);
+}
+.pathway-card:hover .pc- svg { stroke: var(--navy-deep); }
+.pathway-card:hover .pc-title { color: var(--white); }
+.pathway-card:hover .pc-body { color: rgba(255,255,255,0.55); }
+
+.pc- {
+  width: 56px;
+  height: 56px;
+  border: 1.5px solid rgba(11, 31, 59, 0.18);
+  background: rgba(11, 31, 59, 0.03);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 22px;
+  transition: all 0.3s ease;
+}
+
+.pc-title {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 700;
+  font-size: 18px;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  color: var(--navy-deep);
+  margin-bottom: 16px;
+  min-height: 48px;
+  line-height: 1.25;
+  transition: color 0.3s;
+}
+
+.pc-body {
+  font-size: 15px;
+  line-height: 1.85;
+  color: var(--grey);
+  font-weight: 300;
+  max-width: 26ch;
+  transition: color 0.3s;
+}
+.pathways-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  background: transparent;
+  margin-top: 72px;
+}
+.pathway-card,
+.pathway-card:visited {
+  color: inherit;
+}
+.pc-title {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 700;
+  font-size: 20px;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+  color: var(--navy-deep);
+  margin-bottom: 16px;
+  min-height: 48px;
+  line-height: 1.2;
+  white-space: nowrap;
+  transition: color 0.3s;
+}
+.social-icon {
+  color: rgba(255,255,255,0.65);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 14px;
+  transition: color 0.3s ease;
+}
+
+.social-icon:hover {
+  color: var(--accent);
+}
+.social-icon {
+  margin-right: 12px;
+}
