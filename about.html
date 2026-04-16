@@ -11,9 +11,11 @@
   .story {
     padding: 120px;
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 100px;
+    grid-template-columns: 1.35fr 1fr;
+    gap: 80px;
     align-items: center;
+    max-width: 1400px;
+    margin: 0 auto;
   }
 
   .story-text .section-label { margin-bottom: 16px; }
@@ -30,7 +32,7 @@
   .story-text p {
     font-size: 16px;
     line-height: 1.85;
-    color: #4a5568;
+    color: #3a4556;
     margin-bottom: 18px;
     font-weight: 300;
   }
@@ -48,13 +50,22 @@
 
   .story-photo {
     width: 100%;
+    max-width: 400px;
     aspect-ratio: 4/5;
     position: relative;
+    justify-self: center;
   }
 
   .story-photo .photo-placeholder {
     width: 100%;
     height: 100%;
+  }
+
+  .story-photo .photo-placeholder img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
   }
 
   .story-photo::after {
@@ -202,21 +213,21 @@
 
   .timeline-item {
     display: grid;
-    grid-template-columns: 1fr 40px 1fr;
+    grid-template-columns: 1fr 64px 1fr;
     gap: 0;
     align-items: start;
-    margin-bottom: 60px;
+    margin-bottom: 72px;
   }
 
-  .timeline-item:nth-child(odd) .tl-content { grid-column: 1; text-align: right; padding-right: 48px; }
+  .timeline-item:nth-child(odd) .tl-content { grid-column: 1; text-align: right; padding-right: 56px; }
   .timeline-item:nth-child(odd) .tl-empty { grid-column: 3; }
-  .timeline-item:nth-child(even) .tl-content { grid-column: 3; text-align: left; padding-left: 48px; }
+  .timeline-item:nth-child(even) .tl-content { grid-column: 3; text-align: left; padding-left: 56px; }
   .timeline-item:nth-child(even) .tl-empty { grid-column: 1; }
 
   .tl-dot {
     grid-column: 2;
-    width: 40px;
-    height: 40px;
+    width: 64px;
+    height: 64px;
     background: var(--navy);
     border: 3px solid var(--accent);
     border-radius: 50%;
@@ -230,7 +241,7 @@
 
   .tl-year {
     font-family: 'Barlow Condensed', sans-serif;
-    font-size: 11px;
+    font-size: 16px;
     font-weight: 700;
     color: var(--white);
     letter-spacing: 0.5px;
@@ -239,18 +250,18 @@
   .tl-content h3 {
     font-family: 'Barlow Condensed', sans-serif;
     font-weight: 700;
-    font-size: 20px;
+    font-size: 22px;
     letter-spacing: 0.5px;
     text-transform: uppercase;
     color: var(--navy-deep);
-    margin-bottom: 8px;
+    margin-bottom: 10px;
   }
 
   .tl-content p {
-    font-size: 14px;
+    font-size: 15px;
     line-height: 1.75;
-    color: var(--grey);
-    font-weight: 300;
+    color: #2d3748;
+    font-weight: 400;
   }
 
   /* ── PARTNERS LOGO BAND ── */
@@ -291,6 +302,7 @@
     color: var(--grey);
     text-transform: uppercase;
   }
+
 /* ── ABOUT RESPONSIVE ── */
 @media (max-width: 900px) {
   .story                    { padding: 64px 28px; grid-template-columns: 1fr; gap: 40px; }
@@ -302,30 +314,40 @@
   .team                     { padding: 64px 28px; }
   .team-grid                { grid-template-columns: 1fr 1fr; gap: 24px; }
   .timeline                 { padding: 64px 28px; }
-  .timeline-track::before   { left: 19px; transform: none; }
-  .timeline-item            { grid-template-columns: 40px 1fr; gap: 0; margin-bottom: 40px; }
+  .timeline-track::before   { left: 27px; transform: none; }
+  .timeline-item            { grid-template-columns: 56px 1fr; gap: 0; margin-bottom: 48px; align-items: start; }
   .timeline-item:nth-child(odd) .tl-content,
-  .timeline-item:nth-child(even) .tl-content { grid-column: 2; text-align: left; padding-left: 20px; padding-right: 0; }
+  .timeline-item:nth-child(even) .tl-content { grid-column: 2; text-align: left; padding-left: 24px; padding-right: 0; }
   .timeline-item:nth-child(odd) .tl-empty,
   .timeline-item:nth-child(even) .tl-empty   { display: none; }
-  .tl-dot                   { grid-column: 1; }
-  .tl-content h3            { font-size: 16px; }
+  .tl-dot                   { grid-column: 1; width: 56px; height: 56px; margin-top: 0; }
+  .tl-year                  { font-size: 14px; }
+  .tl-content h3            { font-size: 18px; }
+  .tl-content p             { font-size: 14px; }
   .partners                 { padding: 56px 28px; }
   .partners-row             { gap: 28px; }
 }
 @media (max-width: 600px) {
-  .story                    { padding: 52px 16px; }
+  .story                    { padding: 52px 20px; gap: 32px; }
   .story-text h2            { font-size: 26px; }
-  .story-text blockquote    { font-size: 17px; padding-left: 16px; }
-  .values                   { padding: 52px 16px; }
-  .values-grid              { grid-template-columns: 1fr; }
+  .story-text blockquote    { font-size: 17px; padding-left: 16px; margin: 24px 0; }
+  .story-text p             { font-size: 15px; }
+  .values                   { padding: 52px 20px; }
+  .values-grid              { grid-template-columns: 1fr; margin-top: 48px; }
   .value-card               { padding: 28px 20px; }
-  .team                     { padding: 52px 16px; }
+  .team                     { padding: 52px 20px; }
   .team-grid                { grid-template-columns: 1fr; }
-  .timeline                 { padding: 52px 16px; }
-  .tl-content h3            { font-size: 15px; }
-  .tl-content p             { font-size: 13px; }
-  .partners                 { padding: 44px 16px; }
+  .timeline                 { padding: 52px 20px; }
+  .timeline-track           { margin-top: 48px; }
+  .timeline-track::before   { left: 23px; }
+  .timeline-item            { grid-template-columns: 48px 1fr; margin-bottom: 40px; }
+  .tl-dot                   { width: 48px; height: 48px; }
+  .tl-year                  { font-size: 12px; }
+  .tl-content h3            { font-size: 16px; }
+  .tl-content p             { font-size: 14px; }
+  .timeline-item:nth-child(odd) .tl-content,
+  .timeline-item:nth-child(even) .tl-content { padding-left: 20px; }
+  .partners                 { padding: 44px 20px; }
   .partner-logo-placeholder { width: 90px; }
 }
 </style>
@@ -374,8 +396,8 @@
   <div class="story-text">
     <div class="section-label">The Origin</div>
     <h2>Where Institutions Fail, We Build</h2>
-    <p>After years working inside school systems, NGO's, and consulting firms, our founder saw the same pattern repeat: talented students — especially those without economic navigation capital — were falling through the cracks not because of a lack of ability, but because no one had shown them how the architecture of opportunity works.</p>
-    <blockquote>"I have worked inside institutions long enough to understand that their are gaps in communication and efficiencies among the systems that should be offering students ample opportunity to on-ramp to worthwhile opportunities."</blockquote>
+    <p>After years working inside school systems, NGOs, and consulting firms, our founder saw the same pattern repeat: talented students — especially those without economic navigation capital — were falling through the cracks not because of a lack of ability, but because no one had shown them how the architecture of opportunity actually works.</p>
+    <blockquote>"I've worked inside institutions long enough to understand where opportunity breaks — and now I'm building systems that repair those fractures."</blockquote>
     <p>CEO was built to fill that gap. Not as another mentoring program, tutoring nonprofit, or scholarship fund — but as an economic opportunity engine grounded in labor-market literacy, institutional design, and long-term sustainability.</p>
   </div>
   <div class="story-photo">
@@ -392,20 +414,33 @@
     <h2 class="light">What Drives Everything We Do</h2>
   </div>
   <div class="values-grid">
+    <!-- STRUCTURAL INTEGRITY — tree icon -->
     <div class="value-card">
       <div class="value-icon">
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M12 2 L7 8 H9 L5 13 H8 L4 18 H20 L16 13 H19 L15 8 H17 Z"/>
+          <line x1="12" y1="18" x2="12" y2="22"/>
+        </svg>
       </div>
       <div class="value-title">Structural Integrity</div>
-      <div class="value-body">We build institutions designed to last, not programs that fade. Everything we create is designed for sustainability and replication.</div>
+      <div class="value-body">We build institutions designed to last, not programs that fade. Everything we create is engineered for sustainability and replication.</div>
     </div>
+
+    <!-- ECONOMIC CLARITY — line graph icon -->
     <div class="value-card">
       <div class="value-icon">
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="3 20 3 4"/>
+          <polyline points="3 20 21 20"/>
+          <polyline points="6 15 11 10 14 13 20 6"/>
+          <polyline points="20 11 20 6 15 6"/>
+        </svg>
       </div>
       <div class="value-title">Economic Clarity</div>
       <div class="value-body">We demystify how labor markets work. Students deserve to understand the rules of the game before they play it.</div>
     </div>
+
+    <!-- COLLECTIVE ASCENT — unchanged (people icon) -->
     <div class="value-card">
       <div class="value-icon">
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
@@ -413,12 +448,19 @@
       <div class="value-title">Collective Ascent</div>
       <div class="value-body">We believe that lifting the floor raises the ceiling for everyone. Talent without access is a loss for all of society.</div>
     </div>
+
+    <!-- RELENTLESS ITERATION — feedback loop icon -->
     <div class="value-card">
       <div class="value-icon">
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M20 12a8 8 0 0 1-14.5 4.7"/>
+          <polyline points="8 17 5.5 16.7 5.8 14"/>
+          <path d="M4 12a8 8 0 0 1 14.5-4.7"/>
+          <polyline points="16 7 18.5 7.3 18.2 10"/>
+        </svg>
       </div>
       <div class="value-title">Relentless Iteration</div>
-      <div class="value-body">We test our assumptions against real evidence — from the classroom, from employers, from students, and community then adapt continuously.</div>
+      <div class="value-body">We test our assumptions against real evidence — from classrooms, employers, students, and community — then adapt continuously.</div>
     </div>
   </div>
 </section>
@@ -481,6 +523,7 @@ Section intentionally preserved for future activation.
     </div>
   </div>
 </section>
+-->
 
 <!-- TIMELINE -->
 <section class="timeline" id="history">
@@ -492,7 +535,7 @@ Section intentionally preserved for future activation.
     <div class="timeline-item">
       <div class="tl-content">
         <h3>The Classroom Years</h3>
-        <p>Spent nearly a decade teaching and observing where school systems fail to connect learning to labor market value, which is typically not in the school systems scope of practice. Yet, during my years of teaching, I used the classroom as a live laboratory for understanding student aspiration patterns.</p>
+        <p>I spent nearly a decade teaching — using the classroom as a live laboratory for student aspiration patterns and watching, up close, where school systems fail to connect learning to labor-market value. That disconnect isn't usually in a school's scope of practice. But it shapes the outcome anyway.</p>
       </div>
       <div class="tl-dot"><span class="tl-year">2012</span></div>
       <div class="tl-empty"></div>
@@ -501,14 +544,14 @@ Section intentionally preserved for future activation.
       <div class="tl-empty"></div>
       <div class="tl-dot"><span class="tl-year">2022</span></div>
       <div class="tl-content">
-        <h3>MBA & Strategy Management</h3>
-        <p>Transitioned into business strategy and people analytics, completing an MBA at Michigan State University, interned at Johnson & Johnson, then spent two years at a Big 4 accounting firm — discovering the connection between institutional systems and human outcomes.</p>
+        <h3>MBA &amp; Strategy</h3>
+        <p>Completed an MBA at Michigan State University, interned at Johnson &amp; Johnson, then spent two years at EY-Parthenon working on M&amp;A strategy — where I saw firsthand how institutional systems shape human outcomes at scale.</p>
       </div>
     </div>
     <div class="timeline-item">
       <div class="tl-content">
         <h3>Education Pioneers Fellowship</h3>
-        <p>Joined HISD as an Education Pioneers Fellow, building deep understanding of how district level systems shape student and workforce outcomes from the inside. HISD's historical bond proposal offered me insight into the importance and value of what a strong CTE program should emulate. </p>
+        <p>Joined HISD as an Education Pioneers Fellow, building a ground-level understanding of how district systems shape student and workforce outcomes from the inside. HISD's historic bond proposal sharpened my conviction about what a strong CTE program can be — and what it too often isn't.</p>
       </div>
       <div class="tl-dot"><span class="tl-year">2024</span></div>
       <div class="tl-empty"></div>
@@ -518,13 +561,13 @@ Section intentionally preserved for future activation.
       <div class="tl-dot"><span class="tl-year">2026</span></div>
       <div class="tl-content">
         <h3>CEO Founded</h3>
-        <p>Cohort for Economic Opportunity earned its 501(c)(3) status and officially launched, with a mission to architect economic opportunity for students and young adults who are most overlooked by existing systems.</p>
+        <p>Cohort for Economic Opportunity earned its 501(c)(3) status and officially launched, with a mission to architect economic opportunity for students and young adults most overlooked by existing systems.</p>
       </div>
     </div>
     <div class="timeline-item">
       <div class="tl-content">
-        <h3>Harvard Kennedy School</h3>
-        <p>Admitted to Harvard Graduate School of Education, where I was awarded the Zuckerman Fellowship via Center For Public Leadership, adding institutional credibility, elite network access, and policy legitimacy to accelerate CEO's growth.</p>
+        <h3>Harvard Graduate School of Education</h3>
+        <p>Admitted to Harvard Graduate School of Education and awarded the Zuckerman Fellowship through the Center for Public Leadership — adding institutional credibility, cross-school network access, and policy legitimacy to accelerate CEO's work. Harvard is leverage, not destination.</p>
       </div>
       <div class="tl-dot"><span class="tl-year">2026</span></div>
       <div class="tl-empty"></div>
@@ -547,6 +590,7 @@ Section intentionally preserved for future activation.
     <div class="partner-logo-placeholder">Partner Logo</div>
   </div>
 </section>
+-->
 
 <!-- CTA BAND -->
 <section class="cta-band">
