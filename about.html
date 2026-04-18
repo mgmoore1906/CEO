@@ -295,7 +295,7 @@
   .story                    { padding: 64px 28px; grid-template-columns: 1fr; gap: 40px; }
   .story-text h2            { font-size: 34px; }
   .story-text blockquote    { font-size: 20px; }
-  .story-photo              { display: none; }
+  .story-photo              { display: block; max-width: 320px; justify-self: center; }
   .values                   { padding: 64px 28px; }
   .values-grid              { grid-template-columns: 1fr 1fr; gap: 2px; }
   .team                     { padding: 64px 28px; }
@@ -387,10 +387,14 @@
     <blockquote>"I've worked inside institutions long enough to understand where opportunity breaks — and now I'm building systems that repair those fractures."</blockquote>
     <p>CEO was built to fill that gap. Not as another mentoring program, tutoring nonprofit, or scholarship fund — but as an economic opportunity engine grounded in labor-market literacy, institutional design, and long-term sustainability.</p>
   </div>
-  <div class="story-photo">
-    <div class="photo-placeholder dark" style="width:100%;height:100%;overflow:hidden;">
-      <img src="assets/MM-harvard.jpg" alt="Founder at Harvard Graduate School of Education" style="width:100%;height:100%;object-fit:cover;object-position:center 15%;">
+ <div class="team-card" style="width:100%;max-width:100%;max-height:500px;">
+  <div style="width:100%;aspect-ratio:5/;position:relative;overflow:hidden;">
+   <img src="assets/MM-harvard.jpg" style="width:100%;height:100%;object-fit:cover;object-position:center 15%;display:block;">
+    <div class="team-overlay">
+      <p>Leading CEO's strategic vision, program design, and institutional partnerships across the country.</p>
     </div>
+  </div>
+</div>
     <div style="margin-top:16px;">
       <div class="team-name" style="font-size:17px;">Marques Moore </div>
       <div class="team-role">Founder &amp; Executive Director</div>
@@ -632,8 +636,8 @@
           <rect x="442" y="330" width="176" height="80" rx="7" fill="#1E3170" stroke="#2E4490" stroke-width="1"/>
 <text x="530" y="356" text-anchor="middle" dominant-baseline="central" font-family="'Barlow Condensed',sans-serif" font-size="14" font-weight="700" letter-spacing="0.04em" fill="#C8D0E8">LOCAL EMPLOYER</text>
 <text x="530" y="376" text-anchor="middle" font-family="'Barlow Condensed',sans-serif" font-size="12" fill="#6A7AAA">
-  <tspan x="530" dy="0">Vetted Talent</tspan>
-  <tspan x="530" dy="13">Trusted Pipeline</tspan>
+  <tspan x="530" dy="0">Trusted Talent</tspan>
+  <tspan x="530" dy="13">Vetted Pipelines</tspan>
 </text>
           <!-- Student — full, bright, agentic. Just STUDENT. -->
           <circle cx="340" cy="242" r="50" fill="#C49A22" opacity="0.08"/>
@@ -658,6 +662,99 @@
       btn.classList.add('active');
     }
   </script>
+</section>
+
+
+
+<!--TEAM BEHIND CEO -->
+<section class="team" id="team">
+  <div class="section-title-center">
+    <div class="section-label" style="justify-content:center;"><span>Leadership</span></div>
+    <h2>The Team Behind CEO</h2>
+    <p>Practitioners, educators, and systems thinkers united by a single belief: that opportunity is architecturable.</p>
+  </div>
+  <div class="team-grid">
+    <div class="team-card">
+      <div class="team-photo">
+        <img src="assets/TF.jpg" alt="Team Member" style="width:100%;height:100%;object-fit:cover;object-position:center top;display:block;">
+        <div class="team-overlay">
+          <p>-</p>
+        </div>
+      </div>
+      <div class="team-name">Team Member Name</div>
+      <div class="team-role">Title</div>
+    </div>
+    <div class="team-card">
+      <div class="team-photo">
+        <img src="assets/AH.jpg" alt="Team Member" style="width:100%;height:100%;object-fit:cover;object-position:center top;display:block;">
+        <div class="team-overlay">
+          <p>-</p>
+        </div>
+      </div>
+      <div class="team-name">Team Member Name</div>
+      <div class="team-role">Title</div>
+    </div>
+    <div class="team-card">
+      <div class="team-photo">
+        <img src="assets/RH.jpg" alt="Team Member" style="width:100%;height:100%;object-fit:cover;object-position:center top;display:block;">
+        <div class="team-overlay">
+          <p>-</p>
+        </div>
+      </div>
+      <div class="team-name">Team Member Name</div>
+      <div class="team-role">Title</div>
+    </div>
+  </div>
+</section>
+
+<!-- TIMELINE -->
+<section class="timeline" id="history">
+  <div class="section-title-center">
+    <div class="section-label" style="justify-content:center;"><span>Our Journey</span></div>
+    <h2>How We Got Here</h2>
+  </div>
+  <div class="timeline-track">
+    <div class="timeline-item">
+      <div class="tl-content">
+        <h3>The Classroom Years</h3>
+        <p>I spent nearly a decade teaching — using the classroom as a live laboratory for student aspiration patterns and watching, up close, where school systems fail to connect learning to labor-market value. That disconnect isn't usually in a school's scope of practice. But it shapes the outcome anyway.</p>
+      </div>
+      <div class="tl-dot"><span class="tl-year">2012</span></div>
+      <div class="tl-empty"></div>
+    </div>
+    <div class="timeline-item">
+      <div class="tl-empty"></div>
+      <div class="tl-dot"><span class="tl-year">2022</span></div>
+      <div class="tl-content">
+        <h3>MBA &amp; Strategy</h3>
+        <p>Completed an MBA at Michigan State University, interned at Johnson &amp; Johnson, then spent two years at EY-Parthenon working on M&amp;A strategy — where I saw firsthand how institutional systems shape human outcomes at scale.</p>
+      </div>
+    </div>
+    <div class="timeline-item">
+      <div class="tl-content">
+        <h3>Education Pioneers Fellowship</h3>
+        <p>Joined HISD as an Education Pioneers Fellow, building a ground-level understanding of how district systems shape student and workforce outcomes from the inside. HISD's historic bond proposal sharpened my conviction about what a strong CTE program can be — and what it too often isn't.</p>
+      </div>
+      <div class="tl-dot"><span class="tl-year">2024</span></div>
+      <div class="tl-empty"></div>
+    </div>
+    <div class="timeline-item">
+      <div class="tl-empty"></div>
+      <div class="tl-dot"><span class="tl-year">2026</span></div>
+      <div class="tl-content">
+        <h3>CEO Founded</h3>
+        <p>Cohort for Economic Opportunity earned its 501(c)(3) status and officially launched, with a mission to architect economic opportunity for students and young adults most overlooked by existing systems.</p>
+      </div>
+    </div>
+    <div class="timeline-item">
+      <div class="tl-content">
+        <h3>Harvard Graduate School of Education</h3>
+        <p>Admitted to Harvard Graduate School of Education and awarded the Zuckerman Fellowship through the Center for Public Leadership — adding institutional credibility, cross-school network access, and policy legitimacy to accelerate CEO's work. Harvard is leverage, not destination.</p>
+      </div>
+      <div class="tl-dot"><span class="tl-year">2026</span></div>
+      <div class="tl-empty"></div>
+    </div>
+  </div>
 </section>
 
 <!-- VALUES -->
@@ -714,106 +811,6 @@
       </div>
       <div class="value-title">Relentless Iteration</div>
       <div class="value-body">We test our assumptions against real evidence — from classrooms, employers, students, and community — then adapt continuously.</div>
-    </div>
-  </div>
-</section>
-
-<!--TEAM OFF FOR CURRENT LAUNCH -->
-<section class="team" id="team">
-  <div class="section-title-center">
-    <div class="section-label" style="justify-content:center;"><span>Leadership</span></div>
-    <h2>The Team Behind CEO</h2>
-    <p>Practitioners, educators, and systems thinkers united by a single belief: that opportunity is architecturable.</p>
-  </div>
-  <div class="team-grid">
-    <div class="team-card">
-      <div class="team-photo">
-        <div class="photo-placeholder dark" style="width:100%;height:100%;">
-          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
-          Photo
-        </div>
-        <div class="team-overlay">
-          <p>Leading CEO's strategic vision, program design, and institutional partnerships across the country.</p>
-        </div>
-      </div>
-      <div class="team-name">Founder Name</div>
-      <div class="team-role">Founder & Executive Director</div>
-    </div>
-    <div class="team-card">
-      <div class="team-photo">
-        <div class="photo-placeholder dark" style="width:100%;height:100%;">
-          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
-          Photo
-        </div>
-        <div class="team-overlay">
-          <p>Overseeing program delivery, curriculum development, and student outcomes across all cohort tracks.</p>
-        </div>
-      </div>
-      <div class="team-name">Team Member</div>
-      <div class="team-role">Director of Programs</div>
-    </div>
-    <div class="team-card">
-      <div class="team-photo">
-        <div class="photo-placeholder dark" style="width:100%;height:100%;">
-          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
-          Photo
-        </div>
-        <div class="team-overlay">
-          <p>Building and maintaining employer partnerships, sector partnerships, and community relationships.</p>
-        </div>
-      </div>
-      <div class="team-name">Team Member</div>
-      <div class="team-role">Director of Partnerships</div>
-    </div>
-  </div>
-</section>
-
-<!-- TIMELINE -->
-<section class="timeline" id="history">
-  <div class="section-title-center">
-    <div class="section-label" style="justify-content:center;"><span>Our Journey</span></div>
-    <h2>How We Got Here</h2>
-  </div>
-  <div class="timeline-track">
-    <div class="timeline-item">
-      <div class="tl-content">
-        <h3>The Classroom Years</h3>
-        <p>I spent nearly a decade teaching — using the classroom as a live laboratory for student aspiration patterns and watching, up close, where school systems fail to connect learning to labor-market value. That disconnect isn't usually in a school's scope of practice. But it shapes the outcome anyway.</p>
-      </div>
-      <div class="tl-dot"><span class="tl-year">2012</span></div>
-      <div class="tl-empty"></div>
-    </div>
-    <div class="timeline-item">
-      <div class="tl-empty"></div>
-      <div class="tl-dot"><span class="tl-year">2022</span></div>
-      <div class="tl-content">
-        <h3>MBA &amp; Strategy</h3>
-        <p>Completed an MBA at Michigan State University, interned at Johnson &amp; Johnson, then spent two years at EY-Parthenon working on M&amp;A strategy — where I saw firsthand how institutional systems shape human outcomes at scale.</p>
-      </div>
-    </div>
-    <div class="timeline-item">
-      <div class="tl-content">
-        <h3>Education Pioneers Fellowship</h3>
-        <p>Joined HISD as an Education Pioneers Fellow, building a ground-level understanding of how district systems shape student and workforce outcomes from the inside. HISD's historic bond proposal sharpened my conviction about what a strong CTE program can be — and what it too often isn't.</p>
-      </div>
-      <div class="tl-dot"><span class="tl-year">2024</span></div>
-      <div class="tl-empty"></div>
-    </div>
-    <div class="timeline-item">
-      <div class="tl-empty"></div>
-      <div class="tl-dot"><span class="tl-year">2026</span></div>
-      <div class="tl-content">
-        <h3>CEO Founded</h3>
-        <p>Cohort for Economic Opportunity earned its 501(c)(3) status and officially launched, with a mission to architect economic opportunity for students and young adults most overlooked by existing systems.</p>
-      </div>
-    </div>
-    <div class="timeline-item">
-      <div class="tl-content">
-        <h3>Harvard Graduate School of Education</h3>
-        <p>Admitted to Harvard Graduate School of Education and awarded the Zuckerman Fellowship through the Center for Public Leadership — adding institutional credibility, cross-school network access, and policy legitimacy to accelerate CEO's work. Harvard is leverage, not destination.</p>
-      </div>
-      <div class="tl-dot"><span class="tl-year">2026</span></div>
-      <div class="tl-empty"></div>
     </div>
   </div>
 </section>
