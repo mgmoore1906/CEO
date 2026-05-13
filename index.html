@@ -332,18 +332,21 @@
 /* ── INDEX RESPONSIVE ── */
 @media (max-width: 900px) {
   .hero { min-height: 100svh; align-items: flex-end; padding-bottom: 80px; }
-  .hero-photo { display: none; }
+  .hero > .hero-photo { display: none; }
   .hero-content { margin-left: 0; padding: 0 32px 0; max-width: 100%; }
   .hero h1 { font-size: 52px; }
   .hero p { font-size: 16px; max-width: 100%; }
   .hero-scroll-hint { display: none; }
   .mission { padding: 72px 32px; grid-template-columns: 1fr; gap: 48px; }
   .mission-text h2 { font-size: 36px; }
+  .mission .hero-photo { width: 100%; }
+  .mission .hero-photo img { width: 100%; aspect-ratio: 3/2; object-fit: cover; object-position: center top; display: block; }
   .pathways { padding: 72px 32px; }
   .pathways-grid { grid-template-columns: 1fr; gap: 2px; }
   .statement { padding: 72px 32px; grid-template-columns: 1fr; gap: 40px; }
   .statement-content blockquote { font-size: 26px; }
-  .statement-photo { display: none; }
+  .statement .hero-photo { width: 100%; }
+  .statement .hero-photo img { width: 100%; aspect-ratio: 3/2; object-fit: cover; object-position: center top; display: block; }
   .testimonials { padding: 72px 32px; }
   .testi-grid-home { grid-template-columns: 1fr; gap: 20px; }
 }
