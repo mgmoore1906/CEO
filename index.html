@@ -3,8 +3,41 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Cohort for Economic Opportunity – CEO
-</title>
+<title>Cohort for Economic Opportunity | Houston Youth Nonprofit</title>
+<meta name="description" content="CEO prepares overlooked students with the economic navigation capital they need to move intentionally through high-value career pathways. Based in Houston, TX.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://mgmoore1906.github.io/CEO/">
+
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="Cohort for Economic Opportunity | Houston Youth Nonprofit">
+<meta property="og:description" content="CEO bridges the gap between exceptional students and the economic systems they deserve to navigate — on their own terms.">
+<meta property="og:url" content="https://mgmoore1906.github.io/CEO/">
+<meta property="og:image" content="https://mgmoore1906.github.io/CEO/assets/Picture23.jpg">
+<meta property="og:site_name" content="Cohort for Economic Opportunity">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Cohort for Economic Opportunity | Houston Youth Nonprofit">
+<meta name="twitter:description" content="CEO bridges the gap between exceptional students and the economic systems they deserve to navigate — on their own terms.">
+<meta name="twitter:image" content="https://mgmoore1906.github.io/CEO/assets/Picture23.jpg">
+
+<!-- Structured Data -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "NonprofitOrganization",
+  "name": "Cohort for Economic Opportunity",
+  "alternateName": "CEO",
+  "url": "https://mgmoore1906.github.io/CEO/",
+  "logo": "https://mgmoore1906.github.io/CEO/assets/logo-main.png",
+  "description": "CEO prepares overlooked students with the economic navigation capital they need to move intentionally through high-value career pathways. Based in Houston, TX.",
+  "foundingDate": "2024",
+  "areaServed": "Houston, TX",
+  "sameAs": ["https://www.linkedin.com/in/marquesgmoore/"]
+}
+</script>
+
 <link rel="stylesheet" href="styles.css">
 <style>
   /* ── HERO ── */
@@ -23,26 +56,6 @@
     position: absolute;
     inset: 0;
     background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
-  }
-
-  .hero-photo-placeholder {
-    position: absolute;
-    top: 50%;
-    right: 80px;
-    transform: translateY(-50%);
-    width: 420px;
-    height: 520px;
-    border: 2px dashed rgba(255,255,255,0.15);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    color: rgba(255,255,255,0.25);
-    font-family: 'Barlow Condensed', sans-serif;
-    font-size: 12px;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    gap: 12px;
   }
 
   .hero-content {
@@ -149,33 +162,6 @@
     margin-bottom: 14px;
   }
 
-  .mission-video-placeholder {
-    width: 100%;
-    aspect-ratio: 16/9;
-    background: var(--navy-mid);
-    border: 2px dashed rgba(255,255,255,0.12);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    color: rgba(255,255,255,0.25);
-    font-family: 'Barlow Condensed', sans-serif;
-    font-size: 13px;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    gap: 16px;
-  }
-
-  .play-btn {
-    width: 60px;
-    height: 60px;
-    border: 2px solid rgba(255,255,255,0.2);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-
   /* ── PATHWAYS ── */
   .pathways {
     background: var(--white);
@@ -201,10 +187,12 @@
 }
 
   .pathway-card:hover {
-  background: var(--navy-deep);
-  transform: translateY(-4px);}.pathway-card:hover .pc-num { color: rgba(255,255,255,0.07); }
-  .pathway-card:hover .pc- { border-color: var(--accent); background: var(--accent); }
-  .pathway-card:hover .pc- svg { stroke: var(--navy-deep); }
+    background: var(--navy-deep);
+    transform: translateY(-4px);
+  }
+  .pathway-card:hover .pc-num { color: rgba(255,255,255,0.07); }
+  .pathway-card:hover .pc-icon { border-color: var(--accent); background: var(--accent); }
+  .pathway-card:hover .pc-icon svg { stroke: var(--navy-deep); }
   .pathway-card:hover .pc-title { color: var(--white); }
   .pathway-card:hover .pc-body { color: rgba(255,255,255,0.55); }
 
@@ -218,7 +206,7 @@
     transition: color 0.3s;
   }
 
-  .pc- {
+  .pc-icon {
   width: 56px;
   height: 56px;
   border: 1.5px solid rgba(11, 31, 59, 0.18);
@@ -279,13 +267,6 @@
     line-height: 1.8;
     font-weight: 300;
   }
-
-  .statement-photo {
-    width: 100%;
-    aspect-ratio: 4/5;
-  }
-
-  .statement-photo .photo-placeholder { width: 100%; height: 100%; min-height: 400px; }
 
   /* ── TESTIMONIALS ── */
   .testimonials {
@@ -354,7 +335,6 @@
   .hero-content { margin-left: 0; padding: 0 32px 0; max-width: 100%; }
   .hero h1 { font-size: 52px; }
   .hero p { font-size: 16px; max-width: 100%; }
-  .hero-photo-placeholder { display: none; }
   .hero-scroll-hint { display: none; }
   .mission { padding: 72px 32px; grid-template-columns: 1fr; gap: 48px; }
   .mission-text h2 { font-size: 36px; }
@@ -415,7 +395,7 @@
 <section class="hero">
   <div class="hero-bg"></div>
   <div class="hero-photo">
-  <img src="assets/Picture23.jpg" alt="CEO students engaged in leadership and learning">
+  <img src="assets/Picture23.jpg" alt="Students in the CEO cohort collaborating during a leadership session" loading="eager">
 </div>
   <div class="hero-content">
     <div class="hero-eyebrow">Building Economic Architects</div>
@@ -450,10 +430,8 @@
     <a href="about.html" class="btn btn-outline-white" style="margin-top:28px;">Our Full Story</a>
   </div>
   <div class="hero-photo">
-  <img src="assets/Picture24.jpg" alt="CEO students engaged in leadership and learning">
+  <img src="assets/Picture24.jpg" alt="CEO founder and students working through career pathway planning" loading="lazy">
 </div>
-    Watch Our Story
-  </div>
 </section>
 
 <!-- PATHWAYS -->
@@ -466,7 +444,7 @@
   <div class="pathways-grid">
     <a href="programs.html#navigation" class="pathway-card">
   <div class="pc-num">01</div>
-  <div class="pc-">
+  <div class="pc-icon">
     <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
       <circle cx="12" cy="7" r="4"></circle>
       <path d="M5.5 21a6.5 6.5 0 0 1 13 0"></path>
@@ -478,7 +456,7 @@
 
 <a href="programs.html#fellowship" class="pathway-card">
   <div class="pc-num">02</div>
-  <div class="pc-">
+  <div class="pc-icon">
     <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
       <rect x="3" y="7" width="18" height="13" rx="2"></rect>
       <path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path>
@@ -490,7 +468,7 @@
 
 <a href="programs.html#accelerator" class="pathway-card">
   <div class="pc-num">03</div>
-  <div class="pc-">
+  <div class="pc-icon">
     <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
       <path d="M9 18h6"></path>
       <path d="M10 22h4"></path>
@@ -503,7 +481,7 @@
 
 <a href="programs.html#accelerator" class="pathway-card">
   <div class="pc-num">04</div>
-  <div class="pc-">
+  <div class="pc-icon">
     <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
       <path d="M12 21s-7-4.35-9-8.5C1 8 3.5 5 7 5c2 0 3 1 5 3c2-2 3-3 5-3c3.5 0 6 3 4 7.5C19 16.65 12 21 12 21z"></path>
     </svg>
@@ -523,9 +501,8 @@
     <a href="about.html" class="btn btn-navy" style="margin-top:28px;">Read Our Story</a>
   </div>
   <div class="hero-photo">
-  <img src="assets/Picture8.jpg" alt="CEO students engaged in leadership and learning">
+  <img src="assets/Picture8.jpg" alt="CEO program participants engaged in a workforce readiness workshop" loading="lazy">
 </div>
-  </div>
 </section>
 
 <!--
@@ -628,19 +605,6 @@ Section intentionally preserved for future activation.
       <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-13h4v2"/>
       <rect x="2" y="9" width="4" height="12"/>
       <circle cx="4" cy="4" r="2"/>
-    </svg>
-  </a>
-
-  <a href="https://www.youtube.com/@YOURCHANNEL" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="YouTube">
-    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-      <rect x="2" y="5" width="20" height="14" rx="3"></rect>
-      <polygon points="10 9 16 12 10 15 10 9"></polygon>
-    </svg>
-  </a>
-
-  <a href="https://www.facebook.com/YOURPAGE" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="Facebook">
-    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-      <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
     </svg>
   </a>
 </div>
