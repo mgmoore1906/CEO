@@ -1,37 +1,20 @@
 <!DOCTYPE html>
-<!--
-═══════════════════════════════════════════════════════════════════════
-  PLACEHOLDERS TO REPLACE BEFORE PUBLISHING
-  Search the file for each token below. All are styled in gold with a
-  dotted underline (class="tbd") so they're impossible to miss on screen.
-
-  0000 .................. Any year I could not confirm. Fill in.
-  [TEA CERT SUBJECT] .... Your exact TEA certificate subject area
-  [WALLER OUTCOME] ...... One measurable Waller ISD result
-  [HISD OUTCOME] ........ One measurable Director of Retention result
-  LINKEDIN-URL .......... Your full LinkedIn profile URL (2 places)
-  assets/marques.jpg .... Your headshot (or delete the .portrait block)
-  assets/Marques-Moore-Resume.pdf ... Upload your resume here
-
-  ALSO: this page says "Ten years in the classroom." Make sure the
-  resume documents ten visible years before you publish, or change
-  both to match. That mismatch is the one thing a committee will catch.
-═══════════════════════════════════════════════════════════════════════
--->
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Marques Moore | CTE &amp; Career Readiness Leadership</title>
-<meta name="description" content="Marques Moore is a CTE and career-readiness leader in Greater Houston with experience across the classroom, industry, and district administration. Founder of the Cohort for Economic Opportunity.">
+<meta name="description" content="Marques Moore is a Texas certified educator and workforce strategist in Greater Houston with experience across the classroom, industry, and district administration. Founder of the Cohort for Economic Opportunity.">
 <meta name="robots" content="index, follow">
 <link rel="canonical" href="https://mgmoore1906.github.io/CEO/">
 
 <meta property="og:type" content="profile">
 <meta property="og:url" content="https://mgmoore1906.github.io/CEO/">
 <meta property="og:title" content="Marques Moore | CTE &amp; Career Readiness Leadership">
-<meta property="og:description" content="Ten years in the classroom. Corporate strategy and workforce analytics. District administration. All three sides of the CTE table.">
+<meta property="og:description" content="Nine years in the classroom. Enterprise labor market analysis. District administration. All three sides of the CTE table.">
+<meta property="og:image" content="https://mgmoore1906.github.io/CEO/assets/marques-moore.jpg">
 <meta property="og:site_name" content="Marques Moore">
+<meta name="twitter:card" content="summary">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -91,14 +74,6 @@
     display:block;
   }
   .eyebrow--pale{color:var(--gold-soft)}
-
-  /* ── Unconfirmed values ─────────────────────────────────────── */
-  .tbd{
-    color:var(--gold);
-    border-bottom:1px dotted var(--gold);
-    font-family:var(--mono);
-    font-size:.92em;
-  }
 
   /* ── Masthead ───────────────────────────────────────────────── */
   .masthead{
@@ -212,14 +187,14 @@
   .ledger{border-top:2px solid var(--ink);margin-top:.5rem}
   .entry{
     display:grid;
-    grid-template-columns:7.5rem 1fr 9rem;
+    grid-template-columns:9rem 1fr 9rem;
     gap:1.5rem;align-items:baseline;
     padding:1.35rem 0;
     border-bottom:1px solid var(--rule);
   }
   .entry .yr{
-    font-family:var(--mono);font-size:.8rem;font-weight:500;
-    color:var(--slate);font-variant-numeric:tabular-nums;white-space:nowrap;
+    font-family:var(--mono);font-size:.78rem;font-weight:500;
+    color:var(--slate);font-variant-numeric:tabular-nums;line-height:1.4;
   }
   .entry .role{
     font-family:var(--display);font-size:1.4rem;font-weight:600;
@@ -227,9 +202,10 @@
   }
   .entry .org{
     font-family:var(--mono);font-size:.7rem;letter-spacing:.1em;
-    text-transform:uppercase;color:var(--gold);margin:0 0 .55rem;
+    text-transform:uppercase;color:var(--gold);margin:0 0 .55rem;line-height:1.5;
   }
   .entry .what{font-size:.93rem;line-height:1.55;color:var(--slate);margin:0;max-width:56ch}
+  .entry .what b{color:var(--navy);font-weight:600}
   .entry .side{
     font-family:var(--mono);font-size:.62rem;letter-spacing:.13em;
     text-transform:uppercase;color:var(--navy);text-align:right;
@@ -305,10 +281,13 @@
   /* ── Contact ────────────────────────────────────────────────── */
   .contact-grid{display:grid;grid-template-columns:auto 1fr;gap:clamp(1.75rem,5vw,3.5rem);align-items:start}
   .portrait{
-    width:150px;height:190px;object-fit:cover;
+    width:170px;height:212px;object-fit:cover;object-position:center top;
     border:1px solid rgba(255,255,255,.25);display:block;
   }
-  @media(max-width:640px){.contact-grid{grid-template-columns:1fr}}
+  @media(max-width:640px){
+    .contact-grid{grid-template-columns:1fr}
+    .portrait{width:140px;height:175px}
+  }
 
   .lines{list-style:none;margin:2rem 0 0;padding:0;border-top:1px solid rgba(255,255,255,.28)}
   .lines li{
@@ -332,6 +311,9 @@
     transition:background .2s,color .2s;
   }
   .btn:hover,.btn:focus-visible{background:transparent;color:var(--gold-soft)}
+  .btn .meta{
+    font-size:.62rem;letter-spacing:.1em;opacity:.72;margin-left:.6rem;font-weight:400;
+  }
 
   /* ── Footer ─────────────────────────────────────────────────── */
   .foot{background:var(--ink);border-top:1px solid rgba(255,255,255,.16);padding-block:1.6rem;color:#7E93AC}
@@ -364,7 +346,7 @@
     <h1>Marques Moore</h1>
     <p class="thesis">Most CTE leaders have sat on one side of the table. I've sat on <em>all three</em>.</p>
     <p class="hero-meta">
-      <b>Ten years</b> teaching &nbsp;·&nbsp; <b>MBA</b>, Michigan State &nbsp;·&nbsp; <b>M.A.</b> Secondary Education &nbsp;·&nbsp; Founder, <b>CEO</b>
+      <b>Nine years</b> teaching &nbsp;·&nbsp; <b>MBA</b>, Michigan State &nbsp;·&nbsp; <b>M.A.</b> Secondary Education &nbsp;·&nbsp; Founder, <b>CEO</b>
     </p>
 
     <div class="posting">
@@ -372,19 +354,19 @@
         <h2>Classroom</h2>
         <p class="sub">What students actually experience in a pathway.</p>
         <ul>
-          <li>Ten years teaching, science and technology through CTE business and accounting</li>
-          <li>Built and taught programs of study inside a comprehensive Texas high school</li>
-          <li>Prepared students for industry-based certifications</li>
-          <li>Texas educator certification, <span class="tbd">[TEA CERT SUBJECT]</span></li>
+          <li>Nine years teaching, K–12 science and computer science through CTE business and accounting</li>
+          <li>Taught the business and accounting program of study in a Texas high school</li>
+          <li>60% Accounting I &amp; II NOCTI certification attainment in year one</li>
+          <li>Texas Educator Certificate, Physical Education and Business Finance, through 2031</li>
         </ul>
       </div>
       <div class="col">
         <h2>Industry</h2>
         <p class="sub">What employers are actually hiring for.</p>
         <ul>
-          <li>Workforce analytics, Johnson &amp; Johnson</li>
-          <li>M&amp;A consulting, EY-Parthenon</li>
-          <li>Regional labor market analysis using Lightcast, TWC, and O*NET</li>
+          <li>People analytics at Johnson &amp; Johnson, modeling attrition across 30,000 employees</li>
+          <li>Senior consultant at EY-Parthenon, workforce and labor analysis</li>
+          <li>Regional labor market analysis using Texas LMI, TEA, and O*NET</li>
           <li>Founder of a 501(c)(3) built around employer partnership</li>
         </ul>
       </div>
@@ -393,8 +375,8 @@
         <p class="sub">What it takes to run this at scale.</p>
         <ul>
           <li>Director of Retention, Houston ISD</li>
-          <li>Project manager, Education Pioneers Fellowship at HISD</li>
-          <li>Central office strategy, budget, and cross-campus implementation</li>
+          <li>Identified $2–3M in addressable annual savings for the largest district in Texas</li>
+          <li>Informed a $4.4B capital bond program through community input synthesis</li>
           <li>Perkins V, CLNA, and CCMR accountability fluency</li>
         </ul>
       </div>
@@ -406,89 +388,89 @@
 <section class="band" id="record">
   <div class="wrap">
     <span class="eyebrow">The record</span>
-    <h2 class="title">A career posted to both sides of the pathway.</h2>
+    <h2 class="title">A career posted to all three sides of the pathway.</h2>
     <p class="lede">CTE only works when someone can translate between three groups that rarely share a room: teachers, employers, and central office. I've held a seat in each of them, in that order and then back again — deliberately.</p>
 
     <div class="ledger">
 
       <article class="entry reveal">
-        <span class="yr"><span class="tbd">Aug 2012</span>–<span class="tbd">May 2020</span></span>
+        <span class="yr">2012–2020</span>
         <div>
-          <h3 class="role">Science &amp; Technology Teacher</h3>
-          <p class="org">Secondary classroom</p>
-          <p class="what">I spent nearly a decade in front of students. Built the instructional instinct that later kept the strategy work honest — every district decision has a fourth-period version of itself.</p>
+          <h3 class="role">Teacher &amp; Instructor</h3>
+          <p class="org">Pike Township Schools · Vision Academy · Options Charter · Lansing Community College</p>
+          <p class="what">Eight years across K–12 computer science, secondary science, and adult developmental instruction. Redesigned a grades 9–12 science curriculum around a fully digital delivery model. This is where the instructional instinct came from — every district decision has a fourth-period version of itself.</p>
         </div>
         <span class="side">Classroom</span>
       </article>
 
       <article class="entry reveal">
-        <span class="yr"><span class="tbd">2022</span></span>
+        <span class="yr">2021</span>
         <div>
-          <h3 class="role">MBA</h3>
-          <p class="org">Michigan State University</p>
-          <p class="what">Strategy, operations, and data analytics  — the vocabularly that employee and workforce development partners know prior to pedagogical conversations b</p>
-        </div>
-        <span class="side">Industry</span>
-      </article>
-
-      <article class="entry reveal">
-        <span class="yr"><span class="tbd">2022</span></span>
-        <div>
-          <h3 class="role">Workforce Analytics Intern</h3>
+          <h3 class="role">People Analytics Intern</h3>
           <p class="org">Johnson &amp; Johnson</p>
-          <p class="what">Modeled talent supply and demand from inside a Fortune 50 employer. Saw firsthand how employers used analytical forecasting to assess attrition and workforce planning.</p>
+          <p class="what">Built a Tableau dashboard on Workday data modeling voluntary attrition across <b>30,000 employees</b>, then applied predictive analytics to forecast post-pandemic attrition risk. Saw firsthand how a Fortune 50 employer actually forecasts talent supply and demand.</p>
         </div>
         <span class="side">Industry</span>
       </article>
 
       <article class="entry reveal">
-        <span class="yr"><span class="tbd">July 2022</span>–<span class="tbd">June 2024</span></span>
+        <span class="yr">2022</span>
         <div>
-          <h3 class="role">Consultant, Mergers &amp; Acquisitions</h3>
+          <h3 class="role">Master of Business Administration</h3>
+          <p class="org">Michigan State University</p>
+          <p class="what">Strategy, operations, and data analytics — the vocabulary employers and workforce development partners already speak, which is what lets a pathway conversation start as a business conversation rather than a favor.</p>
+        </div>
+        <span class="side">Industry</span>
+      </article>
+
+      <article class="entry reveal">
+        <span class="yr">Jul 2022 – Jul 2024</span>
+        <div>
+          <h3 class="role">Senior Consultant</h3>
           <p class="org">EY-Parthenon</p>
-          <p class="what">Commercial diligence and market analysis under deal timelines. Where the habit of sizing a market before committing resources came from — the same discipline a CLNA demands.</p>
+          <p class="what">Led workforce and labor analysis for a three-hospital health system restructuring — modeling FTE requirements, staffing distribution, and labor cost drivers, contributing to <b>$12M in savings</b>. Where the habit of sizing a market before committing resources came from, which is the same discipline a CLNA demands.</p>
         </div>
         <span class="side">Industry</span>
       </article>
 
       <article class="entry reveal">
-        <span class="yr"><span class="tbd">Summer 2024</span></span>
+        <span class="yr">June – August 2024</span>
         <div>
-          <h3 class="role">Project Manager, Education Pioneers Fellow</h3>
+          <h3 class="role">Graduate Fellow, Education Pioneers</h3>
           <p class="org">Houston Independent School District</p>
-          <p class="what">Returned to public education by choice. Supported HISD's central office 2024 bond proposal inside the largest district in Texas and learned how community relationships are pivotal.</p>
+          <p class="what">Returned to public education by choice. Synthesized Community Advisory Committee and town hall input into recommendations informing a <b>$4.4B capital bond program</b> — and learned that in a district, community relationships are the implementation plan.</p>
         </div>
         <span class="side">District</span>
       </article>
 
       <article class="entry reveal">
-        <span class="yr"><span class="tbd">0000</span>–<span class="tbd">0000</span></span>
+        <span class="yr">August 2024 – January 2025</span>
         <div>
           <h3 class="role">Director of Retention</h3>
           <p class="org">Houston Independent School District</p>
-          <p class="what">Owned a district wide retention portfolio — data, stakeholders, and campus implementation across a system of hundreds of schools.</p>
+          <p class="what">Owned a district-wide retention portfolio for the largest school district in Texas. Built Power BI dashboards on SAP data to surface overtime trends and cost drivers, then synthesized department leader input into a strategy identifying <b>$2–3M in addressable annual savings</b>, delivered to executive leadership.</p>
         </div>
         <span class="side">District</span>
       </article>
 
       <article class="entry reveal">
-        <span class="yr"><span class="tbd">Aug 2025</span>– May 2026</span>
+        <span class="yr">February 2025 – Present</span>
         <div>
-          <h3 class="role">CTE Teacher, Business &amp; Accounting</h3>
-          <p class="org">Waller ISD</p>
-          <p class="what">Went back to the classroom on purpose, to build a director's strategy on current evidence rather than memory. Taught the business and accounting pathway, prepared students for industry-based certifications, and ran the region's labor market analysis in parallel. <span class="tbd">[WALLER OUTCOME]</span></p>
+          <h3 class="role">Founder &amp; Principal Consultant</h3>
+          <p class="org">Cohort for Economic Opportunity</p>
+          <p class="what">Built a 501(c)(3) from formation through board development and a pre-pilot cohort. Ran an independent regional CTE needs assessment across Northwest Greater Houston, developed an employer engagement and advisory council structure, and delivered family programming to <b>15 student-family units</b>.</p>
         </div>
-        <span class="side">Classroom</span>
+        <span class="side">Industry</span>
       </article>
 
       <article class="entry reveal">
-        <span class="yr"><span class="tbd">Februrary 2026</span>–Present</span>
+        <span class="yr">July 2025 – May 2026</span>
         <div>
-          <h3 class="role">Founder</h3>
-          <p class="org">Cohort for Economic Opportunity</p>
-          <p class="what">Built a 501(c)(3) from formation through board development and a pre-pilot cohort — through data analysis and goal setting to support parents and students workforce readiness alignment to their career interest</p>
+          <h3 class="role">Business &amp; Finance CTE Teacher</h3>
+          <p class="org">Waller Independent School District</p>
+          <p class="what">Went back to the classroom on purpose, to build a director's strategy on current evidence rather than memory. Taught the business and accounting pathway to TEKS and IBC alignment, reaching <b>60% Accounting I &amp; II NOCTI attainment</b> in year one, while running the region's labor market analysis in parallel.</p>
         </div>
-        <span class="side">Industry</span>
+        <span class="side">Classroom</span>
       </article>
 
     </div>
@@ -500,7 +482,7 @@
   <div class="wrap">
     <span class="eyebrow eyebrow--pale">Labor market analysis</span>
     <h2 class="title">Ideas that can manifest true student workforce readiness.</h2>
-    <p class="lede">Independent regional analysis using TEA Labor Market Information, Texas Workforce Commission data, and O*NET occupational profiles — mapping which Greater Houston occupations are actually growing, what they pay, which credentials gate entry, and where a high school program of study can put a student on the right side of that line. It's the same evidence base a Comprehensive Local Needs Assessment runs on, and I've been doing it voluntarily.</p>
+    <p class="lede">Independent regional analysis using Texas Labor Market Information, TEA CTE readiness data, and O*NET occupational profiles — mapping which Greater Houston occupations are actually growing, what they pay, which credentials gate entry, and where a high school program of study can put a student on the right side of that line. It's the same evidence base a Comprehensive Local Needs Assessment runs on, and I've been doing it voluntarily.</p>
 
     <div class="figures">
       <div class="fig">
@@ -540,9 +522,10 @@
       <div>
         <ul class="creds" style="border-top:1px solid var(--rule)">
           <li><span>Federal tax-exempt status secured</span><span class="inst">501(c)(3)</span></li>
-          <li><span>Governing board seated, including a member with generational ties to the service region</span><span class="inst">Governance</span></li>
-          <li><span>Pre-pilot family mixer convened with student and parent cohort families</span><span class="inst">Community</span></li>
-          <li><span>Regional focus, Waller County and Greater Houston</span><span class="inst">Geography</span></li>
+          <li><span>Independent regional CTE needs assessment across Northwest Greater Houston</span><span class="inst">Research</span></li>
+          <li><span>Employer engagement strategy and advisory council structure developed</span><span class="inst">Partnership</span></li>
+          <li><span>Family programming delivered to 15 student-family units</span><span class="inst">Community</span></li>
+          <li><span>Multi-source funding strategy spanning Perkins V and philanthropy</span><span class="inst">Funding</span></li>
           <li><span>Full pilot cohort in design</span><span class="inst">Summer 2027</span></li>
         </ul>
       </div>
@@ -571,7 +554,7 @@
       </div>
     </div>
 
-    <p class="lede" style="margin-top:2.5rem;margin-bottom:0">For a hiring committee, the relevant part isn't the mission statement. It's that recruiting employer partners, seating a board, convening families, and designing a pathway from labor market data are the daily work of a CTE director — and I've done all four without a district's budget or brand behind me.</p>
+    <p class="lede" style="margin-top:2.5rem;margin-bottom:0">For a hiring committee, the relevant part isn't the mission statement. It's that running a needs assessment, recruiting employer partners, seating a board, and convening families are the daily work of a CTE director — and I've done all four without a district's budget or brand behind me.</p>
   </div>
 </section>
 
@@ -584,10 +567,12 @@
     <div class="split">
       <div>
         <ul class="creds">
-          <li><span>Master of Business Administration</span><span class="inst">Michigan State</span></li>
-          <li><span>M.A., Secondary Education</span><span class="inst">Graduate</span></li>
-          <li><span>Texas Educator Certification, <span class="tbd">[TEA CERT SUBJECT]</span></span><span class="inst">TEA</span></li>
-          <li><span>Education Pioneers Fellow</span><span class="inst">Fellowship</span></li>
+          <li><span>Texas Educator Certificate — Physical Education &amp; Business Finance</span><span class="inst">Through 2031</span></li>
+          <li><span>Master of Business Administration</span><span class="inst">Michigan State · 2022</span></li>
+          <li><span>M.A., Secondary Education</span><span class="inst">Ball State · 2009</span></li>
+          <li><span>B.S., Exercise Science</span><span class="inst">Ball State · 2005</span></li>
+          <li><span>Tableau Desktop Specialist</span><span class="inst">Certification</span></li>
+          <li><span>Education Pioneers Graduate Fellow</span><span class="inst">Fellowship</span></li>
         </ul>
       </div>
       <div>
@@ -600,12 +585,14 @@
           <li>Programs of study</li>
           <li>Industry-based certifications</li>
           <li>Work-based learning</li>
-          <li>Advisory committees</li>
+          <li>Advisory councils</li>
           <li>Articulation &amp; dual credit</li>
           <li>HB 8</li>
-          <li>Lightcast</li>
-          <li>TWC</li>
+          <li>Grant development</li>
+          <li>Texas LMI</li>
           <li>O*NET</li>
+          <li>Power BI</li>
+          <li>Tableau</li>
         </ul>
       </div>
     </div>
@@ -616,19 +603,21 @@
 <section class="band band--dark" id="contact">
   <div class="wrap">
     <div class="contact-grid">
-      <img class="portrait" src="assets/marques.moore.jpg" alt="Marques Moore">
+      <img class="portrait" src="assets/marques-moore.jpg" alt="Portrait of Marques Moore" width="170" height="212">
       <div>
         <span class="eyebrow eyebrow--pale">Get in touch</span>
         <h2 class="title">Looking for a district ready to build the pathway, not inherit it.</h2>
         <p class="lede" style="margin-bottom:0">Seeking CTE Director and career-readiness leadership roles, with a primary focus on Greater Houston and openness to the right role nationally. Available immediately.</p>
 
         <ul class="lines">
-          <li><span class="k">Email</span><span class="v"><a href="mailto:marques.moore@jointhecohort.org">marques.moore@jointhecohort.org</a></span></li>
-          <li><span class="k">LinkedIn</span><span class="v"><a href="LINKEDIN-URL">linkedin.com/in/<span class="tbd">marques-moore</span></a></span></li>
+          <li><span class="k">Email</span><span class="v"><a href="mailto:mgmoore1906@gmail.com">mgmoore1906@gmail.com</a></span></li>
+          <li><span class="k">LinkedIn</span><span class="v"><a href="https://www.linkedin.com/in/marquesgmoore" target="_blank" rel="noopener">linkedin.com/in/marquesgmoore</a></span></li>
           <li><span class="k">Based in</span><span class="v">Greater Houston, Texas</span></li>
         </ul>
 
-        <a class="btn" href="assets/Marques-Moore-Resume.pdf" download>Download résumé (PDF)</a>
+        <a class="btn" href="assets/Marques-Moore-Resume.pdf" download="Marques-Moore-Resume.pdf" type="application/pdf">
+          Download résumé <span class="meta">PDF · 310 KB</span>
+        </a>
       </div>
     </div>
   </div>
@@ -637,7 +626,7 @@
 <footer class="foot">
   <div class="wrap">
     <span>Marques Moore &nbsp;·&nbsp; CTE &amp; Career Readiness Leadership</span>
-    <span><a href="mailto:marques.moore@jointhecohort.org">marques.moore@jointhecohort.org</a></span>
+    <span><a href="mailto:mgmoore1906@gmail.com">mgmoore1906@gmail.com</a></span>
   </div>
 </footer>
 
