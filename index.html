@@ -240,6 +240,35 @@
     color:#7E93AC;margin-top:1.5rem;
   }
 
+  /* ── Power BI exhibit ───────────────────────────────────────── */
+  .exhibit{margin:2.5rem 0 0}
+  .exhibit-frame{
+    position:relative;width:100%;
+    aspect-ratio:16/10;
+    border:1px solid var(--rule);
+    border-top:2px solid var(--ink);
+    background:var(--paper);
+  }
+  .exhibit-frame iframe{
+    position:absolute;inset:0;width:100%;height:100%;border:0;display:block;
+  }
+  .exhibit figcaption{
+    display:flex;justify-content:space-between;align-items:baseline;
+    gap:1rem;flex-wrap:wrap;
+    margin-top:.7rem;
+    font-family:var(--mono);font-size:.66rem;letter-spacing:.07em;
+    color:var(--slate);line-height:1.6;
+  }
+  .exhibit figcaption a{
+    color:var(--gold);text-decoration:none;white-space:nowrap;
+    border-bottom:1px solid transparent;transition:border-color .2s;
+  }
+  .exhibit figcaption a:hover,.exhibit figcaption a:focus-visible{border-color:var(--gold)}
+  @media(max-width:700px){
+    /* Keep the report's native 16:10; the full-screen link carries mobile */
+    .exhibit-frame{min-height:230px}
+  }
+
   /* ── Two-column prose ───────────────────────────────────────── */
   .split{display:grid;grid-template-columns:1fr 1fr;gap:clamp(2rem,5vw,4rem)}
   @media(max-width:820px){.split{grid-template-columns:1fr}}
@@ -344,7 +373,7 @@
   <div class="wrap">
     <span class="eyebrow">Greater Houston &nbsp;/&nbsp; Available immediately</span>
     <h1>Marques Moore</h1>
-    <p class="thesis">I am a CTE leader who has sat at all three sides of the table. <em>all three</em>.</p>
+    <p class="thesis">I am a CTE leader who has sat at <em>all three</em> sides of the table.</p>
     <p class="hero-meta">
       <b>Nine years</b> teaching &nbsp;·&nbsp; <b>MBA</b>, Michigan State &nbsp;·&nbsp; <b>M.A.</b> Secondary Education &nbsp;·&nbsp; Founder, <b>CEO</b>
     </p>
@@ -424,11 +453,11 @@
       </article>
 
       <article class="entry reveal">
-        <span class="yr">Jul 2022 – Jul 2024</span>
+        <span class="yr">July 2022 – July 2024</span>
         <div>
           <h3 class="role">Senior Consultant</h3>
           <p class="org">EY-Parthenon</p>
-          <p class="what">Led workforce and labor analysis for a three hospital health system restructuring — modeling FTE requirements, staffing distribution, and labor cost drivers, contributing to <b>$12M in savings</b>. Where the habit of sizing a market before committing resources came from, which is the same discipline a CLNA demands.</p>
+          <p class="what">Led workforce and labor analysis for a three-hospital health system restructuring — modeling FTE requirements, staffing distribution, and labor cost drivers, contributing to <b>$12M in savings</b>. Where the habit of sizing a market before committing resources came from, which is the same discipline a CLNA demands.</p>
         </div>
         <span class="side">Industry</span>
       </article>
@@ -448,13 +477,13 @@
         <div>
           <h3 class="role">Director of Retention</h3>
           <p class="org">Houston Independent School District</p>
-          <p class="what">Owned a district wide retention portfolio for the largest school district in Texas. Built Power BI dashboards on SAP data to surface overtime trends and cost drivers, then synthesized department leader input into a strategy identifying <b>$2–3M in addressable annual savings</b>, delivered to executive leadership.</p>
+          <p class="what">Owned a district-wide retention portfolio for the largest school district in Texas. Built Power BI dashboards on SAP data to surface overtime trends and cost drivers, then synthesized department leader input into a strategy identifying <b>$2–3M in addressable annual savings</b>, delivered to executive leadership.</p>
         </div>
         <span class="side">District</span>
       </article>
 
       <article class="entry reveal">
-        <span class="yr">February 2025 – Present</span>
+        <span class="yr">April 2025 – Present</span>
         <div>
           <h3 class="role">Founder &amp; Principal Consultant</h3>
           <p class="org">Cohort for Economic Opportunity</p>
@@ -495,7 +524,7 @@
       </div>
       <div class="fig">
         <span class="n">$104B</span>
-        <p>in projected lifetime earnings lost by a single Texas eighth grade cohort.</p>
+        <p>in projected lifetime earnings lost by a single Texas eighth-grade cohort.</p>
       </div>
       <div class="fig">
         <span class="n">60 / 48</span>
@@ -508,6 +537,30 @@
   </div>
 </section>
 
+<!-- ══ POWER BI EXHIBIT ═══════════════════════════════════════ -->
+<section class="band band--white" id="dashboard">
+  <div class="wrap">
+    <span class="eyebrow">Exhibit &nbsp;/&nbsp; Live dashboard</span>
+    <h2 class="title">The analysis, not a description of it.</h2>
+    <p class="lede">A working Power BI report analyzing career and technical education across Greater Houston school districts, built from Texas Labor Market Information and O*NET. Interactive — filter it yourself. This is the live file behind the needs assessment, not a screenshot of one.</p>
+
+    <figure class="exhibit">
+      <div class="exhibit-frame">
+        <iframe
+          title="Greater Houston ISD CTE Dashboard"
+          src="https://app.powerbi.com/view?r=eyJrIjoiNmE2YzAyZmEtNzlmYy00YjEyLWFlN2YtZjFlNTNhZGM1ZWE3IiwidCI6IjJjZGJiZjkyLWQwNzAtNDZmZS1iY2E2LWFlYWVhMWFmMjFkNSJ9"
+          frameborder="0"
+          allowfullscreen="true"
+          loading="lazy"></iframe>
+      </div>
+      <figcaption>
+        <span>Source: Texas Labor Market Information · O*NET · Built and maintained by Marques Moore</span>
+        <a href="https://app.powerbi.com/view?r=eyJrIjoiNmE2YzAyZmEtNzlmYy00YjEyLWFlN2YtZjFlNTNhZGM1ZWE3IiwidCI6IjJjZGJiZjkyLWQwNzAtNDZmZS1iY2E2LWFlYWVhMWFmMjFkNSJ9" target="_blank" rel="noopener">Open full screen ↗</a>
+      </figcaption>
+    </figure>
+  </div>
+</section>
+
 <!-- ══ CEO ════════════════════════════════════════════════════ -->
 <section class="band band--white" id="ceo">
   <div class="wrap">
@@ -516,15 +569,15 @@
 
     <div class="split">
       <div>
-        <p class="lede" style="margin-bottom:1.5rem">CEO is a 501(c)(3) nonprofit I founded to give talented students — especially those who have been systematically overlooked — the <strong>economic navigation capital</strong> to move with intention through high value, high wage, and high demand career pathways.</p>
-        <p class="lede" style="margin-bottom:0">It connects leadership, workforce readiness, entrepreneurship, and social emotional learning in one intentional experience. The through line: ambition is evenly distributed and navigation isn't.</p>
+        <p class="lede" style="margin-bottom:1.5rem">CEO is a 501(c)(3) nonprofit I founded to give talented students — especially those who have been systematically overlooked — the <strong>economic navigation capital</strong> to move with intention through high-value, high-wage, and high-demand career pathways.</p>
+        <p class="lede" style="margin-bottom:0">It connects leadership, workforce readiness, entrepreneurship, and social emotional learning in one intentional experience. The through-line: ambition is evenly distributed and navigation isn't.</p>
       </div>
       <div>
         <ul class="creds" style="border-top:1px solid var(--rule)">
-          <li><span>Federal tax exempt status secured</span><span class="inst">501(c)(3)</span></li>
+          <li><span>Federal tax-exempt status secured</span><span class="inst">501(c)(3)</span></li>
           <li><span>Independent regional CTE needs assessment across Northwest Greater Houston</span><span class="inst">Research</span></li>
           <li><span>Employer engagement strategy and advisory council structure developed</span><span class="inst">Partnership</span></li>
-          <li><span>Family programming delivered to 15 student family units</span><span class="inst">Community</span></li>
+          <li><span>Family programming delivered to 15 student-family units</span><span class="inst">Community</span></li>
           <li><span>Full pilot cohort in design</span><span class="inst">Summer 2027</span></li>
         </ul>
       </div>
@@ -548,8 +601,8 @@
       </div>
       <div class="pillar">
         <span class="idx">Pillar 04</span>
-        <h3>Social Emotional Learning</h3>
-        <p>Learning how to communicate and work in diverse groups and become proactive problem solvers</p>
+        <h3>Social &amp; Emotional Learning</h3>
+        <p>Communicating and working across difference, and becoming a proactive problem solver.</p>
       </div>
     </div>
 
@@ -606,7 +659,7 @@
       <div>
         <span class="eyebrow eyebrow--pale">Get in touch</span>
         <h2 class="title">Looking for a district ready to build the pathway, not inherit it.</h2>
-        <p class="lede" style="margin-bottom:0">Seeking CTE Director and career readiness leadership roles, with a primary focus on Greater Houston and openness to the right role nationally.</p>
+        <p class="lede" style="margin-bottom:0">Seeking CTE Director and career-readiness leadership roles, with a primary focus on Greater Houston and openness to the right role nationally.</p>
 
         <ul class="lines">
           <li><span class="k">Email</span><span class="v"><a href="mailto:mgmoore1906@gmail.com">mgmoore1906@gmail.com</a></span></li>
